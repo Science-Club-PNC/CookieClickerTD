@@ -7,6 +7,7 @@
   <sounds name="sound"/>
   <sprites name="sprites">
     <sprite>sprites\spr_tower_base</sprite>
+    <sprite>sprites\spr_king_cookie</sprite>
     <sprite>sprites\spr_wall</sprite>
     <sprite>sprites\spr_enemy</sprite>
   </sprites>
@@ -31,6 +32,7 @@
     <object>objects\obj_enemy</object>
     <object>objects\obj_game</object>
     <object>objects\obj_wall</object>
+    <object>objects\obj_king_cookie</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room_test</room>
