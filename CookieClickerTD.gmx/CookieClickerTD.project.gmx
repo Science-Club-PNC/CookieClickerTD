@@ -12,7 +12,7 @@
   </sprites>
   <backgrounds name="background">
     <background>background\back_grid</background>
-    <background>background\background1</background>
+    <background>background\back_grass</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
