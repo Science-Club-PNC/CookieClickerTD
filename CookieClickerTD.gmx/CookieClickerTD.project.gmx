@@ -7,7 +7,8 @@
   <sounds name="sound"/>
   <sprites name="sprites">
     <sprite>sprites\spr_tower_base</sprite>
-    <sprite>sprites\sprite1</sprite>
+    <sprite>sprites\spr_wall</sprite>
+    <sprite>sprites\spr_enemy</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\back_grid</background>
@@ -28,8 +29,8 @@
     <object>objects\obj_tower</object>
     <object>objects\obj_enemy</object>
     <object>objects\obj_game</object>
+    <object>objects\obj_wall</object>
   </objects>
-  <timelines name="timelines"/>
   <rooms name="rooms">
     <room>rooms\room_test</room>
   </rooms>
