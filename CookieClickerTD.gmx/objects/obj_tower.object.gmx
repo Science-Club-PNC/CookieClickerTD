@@ -27,6 +27,13 @@
             <kind>1</kind>
             <string>///init tower settings
 
+// ---- position data ----
+
+//htile &amp; vtile
+//the upper left tile the object is in
+htile = 0
+vtile = 0
+
 // ---- tower core stats ----
 
 //tower_type
