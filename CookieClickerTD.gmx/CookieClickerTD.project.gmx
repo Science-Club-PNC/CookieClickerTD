@@ -26,6 +26,8 @@
       <script>scripts\tower_create.gml</script>
       <script>scripts\tower_get_target.gml</script>
     </scripts>
+    <script>scripts\wall_grid_init.gml</script>
+    <script>scripts\wall_grid_add.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\obj_tower</object>
