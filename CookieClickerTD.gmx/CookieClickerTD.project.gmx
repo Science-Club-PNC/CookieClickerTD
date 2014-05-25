@@ -20,14 +20,18 @@
     <scripts name="enemy">
       <script>scripts\enemy_create.gml</script>
       <script>scripts\enemy_stats_update.gml</script>
+      <script>scripts\enemy_find_path.gml</script>
     </scripts>
     <scripts name="tower">
       <script>scripts\tower_stats_update.gml</script>
       <script>scripts\tower_create.gml</script>
       <script>scripts\tower_get_target.gml</script>
     </scripts>
-    <script>scripts\wall_grid_init.gml</script>
-    <script>scripts\wall_grid_add.gml</script>
+    <scripts name="wall_grid">
+      <script>scripts\wall_grid_init.gml</script>
+      <script>scripts\wall_grid_add.gml</script>
+      <script>scripts\wall_grid_remove.gml</script>
+    </scripts>
   </scripts>
   <objects name="objects">
     <object>objects\obj_tower</object>

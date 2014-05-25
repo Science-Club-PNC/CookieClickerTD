@@ -50,6 +50,32 @@
         </arguments>
       </action>
     </event>
+    <event eventtype="6" enumb="57">
+      <action>
+        <libid>1</libid>
+        <id>204</id>
+        <kind>0</kind>
+        <userelative>-1</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_kill_position</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>0</kind>
+            <string>mouse_x</string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>mouse_y</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="6" enumb="56">
       <action>
         <libid>1</libid>
@@ -109,9 +135,12 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_set_alpha(0.3);
+            <string>///debug: draw wall_grid
+/*
+draw_set_alpha(0.3);
 mp_grid_draw(global.wall_grid);
 draw_set_alpha(1);
+*/
 </string>
           </argument>
         </arguments>
