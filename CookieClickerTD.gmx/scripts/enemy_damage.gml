@@ -8,7 +8,7 @@ if (argument0 > 0)
     var dealt_damage = min(1, argument0 - armorlevel)
     
     //deal damage
-    hitpoints -= dealt_damage;
+    hitpoints = hitpoints - dealt_damage;
     
     //if the enemy is dead destroy it
     if (hitpoints <= 0)
