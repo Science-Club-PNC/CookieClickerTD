@@ -10,6 +10,7 @@
     <sprite>sprites\spr_king_cookie</sprite>
     <sprite>sprites\spr_wall</sprite>
     <sprite>sprites\spr_enemy</sprite>
+    <sprite>sprites\spr_bullet</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\back_grid</background>
@@ -28,6 +29,7 @@
       <script>scripts\tower_stats_update.gml</script>
       <script>scripts\tower_create.gml</script>
       <script>scripts\tower_get_target.gml</script>
+      <script>scripts\tower_shoot.gml</script>
     </scripts>
     <scripts name="wall_grid">
       <script>scripts\wall_grid_init.gml</script>
@@ -41,6 +43,7 @@
     <object>objects\obj_game</object>
     <object>objects\obj_wall</object>
     <object>objects\obj_king_cookie</object>
+    <object>objects\obj_bullet</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room_test</room>
