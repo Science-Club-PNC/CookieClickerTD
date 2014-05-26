@@ -22,6 +22,7 @@
       <script>scripts\enemy_stats_update.gml</script>
       <script>scripts\enemy_find_path.gml</script>
       <script>scripts\enemy_update_paths.gml</script>
+      <script>scripts\enemy_damage.gml</script>
     </scripts>
     <scripts name="tower">
       <script>scripts\tower_stats_update.gml</script>
