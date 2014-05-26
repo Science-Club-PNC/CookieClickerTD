@@ -137,6 +137,7 @@
             <kind>1</kind>
             <string>///clean up wall grid
 
+//destroys wall grid to prevent memory leaks
 mp_grid_destroy(global.wall_grid);
 </string>
           </argument>
@@ -161,6 +162,7 @@ mp_grid_destroy(global.wall_grid);
           <argument>
             <kind>1</kind>
             <string>///debug: draw wall_grid
+//to check if walls are correctly added to wall grid
 /*
 draw_set_alpha(0.3);
 mp_grid_draw(global.wall_grid);
