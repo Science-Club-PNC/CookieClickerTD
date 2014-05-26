@@ -155,7 +155,7 @@ image_angle = direction;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_text(10, 10, string(path_position*path_get_length(path_index)) );
+            <string>draw_text(10, 10, string(path_get_length(path_index)-path_position*path_get_length(path_index)) );
 draw_self()
 </string>
           </argument>
