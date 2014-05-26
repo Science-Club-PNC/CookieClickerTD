@@ -3,6 +3,7 @@
 
 if (target_priority == 0)
 {
+    
     //target priority: nearest to king
     //todo: add selecting code
 } else if (target_priority == 1)
