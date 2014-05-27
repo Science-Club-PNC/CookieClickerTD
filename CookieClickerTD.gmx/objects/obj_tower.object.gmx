@@ -29,10 +29,10 @@
 
 // ---- position data ----
 
-//htile &amp; vtile
-//the upper left tile the object is in
-htile = 0
-vtile = 0
+//center_x &amp; center_y
+//the center of the tower
+center_x = 0
+center_y = 0
 
 // ---- tower core stats ----
 
@@ -62,7 +62,13 @@ hit_range = 0;
 
 //hit_speed
 //shots per seconds
-hit_speed = 0;
+hit_speed = 2;
+
+//reload
+//current state till next shot
+//0 = cannot shoot
+//1 = can shoot
+reload = 0;
 
 // ---- basic tower defence stats ----- 
 
@@ -76,6 +82,14 @@ hitpoints = 0;
 armor_level = 0; 
 
 // ---- targeting stats ----
+
+//target
+//currently targeted enemy
+target = noone;
+
+//target_angle
+//angle the tower is curently targeting
+target_angle = 0;
 
 //can_target_ground
 //can target ground enemies
@@ -133,10 +147,101 @@ splash_rolloff = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///attack
-//temp attacking test
+            <string>///target enemy
 
-tower_shoot(instance_nearest(x,y,obj_enemy));
+//find target
+//todo change targeting function to tower_get_target when it's finished
+target = instance_nearest(center_x, center_y, obj_enemy);
+
+//update target angle if a target was found
+if (target != noone)
+{
+    target_angle = point_direction(center_x, center_y, target.x, target.y);
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///reload and shoot
+
+//reload if not yet fully reloaded
+if (reload &lt; 1)
+{
+    reload = reload + hit_speed/room_speed
+}
+
+//shoot all bullets that are loaded (the loop is for extremly rapid shooting towers)
+while (reload &gt;= 1)
+{
+    reload = reload - 1;
+    tower_shoot(target);
+}
+    
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="73">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///draw turret
+draw_sprite_ext(spr_tower_turret, 0, center_x, center_y, 1, 1, target_angle, c_white, 1);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///draw tower
+//draw base
+draw_self();
 </string>
           </argument>
         </arguments>

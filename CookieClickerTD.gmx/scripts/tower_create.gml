@@ -13,6 +13,10 @@ with(instance_create(argument0*tile_size, argument1*tile_size, obj_tower))
     image_xscale = tower_size*tile_size/sprite_width;
     image_yscale = tower_size*tile_size/sprite_height;
     
+    //calcs and saves the center of the tower
+    center_x = x + tower_size*tile_size/2
+    center_y = y + tower_size*tile_size/2
+    
     //add the tower to the wall grid for pathfinding
     wall_grid_add();
     
