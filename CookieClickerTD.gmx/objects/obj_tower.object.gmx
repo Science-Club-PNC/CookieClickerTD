@@ -110,7 +110,7 @@ can_target_air = true;
 //6 = groups
 //7 = ground
 //8 = flying
-target_priority = 1;
+target_priority = 2;
 
 // ---- attack stats ----
 

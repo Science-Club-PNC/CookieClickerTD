@@ -34,19 +34,58 @@ if (target_priority == 0)
         }
     }
     //target priority: lowest health
-    //todo: add selecting code
+
 } else if (target_priority == 2)
 {
+    var highest_health = 0;
+    with (obj_enemy)
+    {
+        if point_distance(x,y,other.center_x,other.center_y)<other.hit_range
+        {
+            if (target == noone or hitpoints > highest_health)
+            {
+                highest_health = hitpoints;
+                target = id;
+            }
+        }
+    }
+    
     //target priority: highest health
-    //todo: add selecting code
+
 } else if (target_priority == 3)
 {
+    var lowest_armor = 0;
+    with (obj_enemy)
+    {
+        if point_distance(x,y,other.center_x,other.center_y)<other.hit_range
+        {
+            if (target == noone or armor_level < lowest_armor)
+            {
+                lowest_armor = armor_level;
+                target = id;
+            }
+        }
+    }
+    
     //target priority: lowest armor
-    //todo: add selecting code
+
 } else if (target_priority == 4)
 {
-    //target priority: highest armor
-    //todo: add selecting code
+    var higest_armor = 0;
+    with (obj_enemy)
+    {
+        if point_distance(x,y,other.center_x,other.center_y)<other.hit_range
+        {
+            if (target == noone or armor_level > highest_armor)
+            {
+                highest_armor = armor_level;
+                target = id;
+            }
+        }
+    }
+     
+            //target priority: highest armor
+
 } else if (target_priority == 5)
 {
     //target priority: strongest attack
