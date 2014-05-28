@@ -1,8 +1,20 @@
 ///src_create_tower(x, y, type, class, size)
 //creates a tower and returns it
 
+var abs_x = argument0*tile_size;
+var abs_y = argument1*tile_size;
+
+//prevent player from placing multiple towers on the same place
+with (obj_tower)
+{
+    if (x == abs_x and y == abs_y)
+    {
+        return noone;
+    }
+}
+
 //create tower instance and target it
-with(instance_create(argument0*tile_size, argument1*tile_size, obj_tower))
+with (instance_create(abs_x, abs_y, obj_tower))
 {
     //assign base stats
     tower_type = argument2;
