@@ -21,6 +21,19 @@ if (target_priority == 0)
     }
 } else if (target_priority == 1)
 {
+    var lowest_health = 0;
+    with (obj_enemy)
+    {
+        if point_distance(x,y,other.center_x,other.center_y)<other.hit_range
+        {
+            var lowest_health = hitpoints;
+            if (target == noone or hitpoints < lowest_health)
+            {
+                lowest_health = hitpoints;
+                target = id;
+            }
+        }
+    }
     //target priority: lowest health
     //todo: add selecting code
 } else if (target_priority == 2)
