@@ -5,12 +5,9 @@ var abs_x = argument0*tile_size;
 var abs_y = argument1*tile_size;
 
 //prevent player from placing multiple towers on the same place
-with (obj_tower)
+if (place_meeting(abs_x, abs_y, obj_tower))
 {
-    if (x == abs_x and y == abs_y)
-    {
-        return noone;
-    }
+    return noone;
 }
 
 //create tower instance and target it
