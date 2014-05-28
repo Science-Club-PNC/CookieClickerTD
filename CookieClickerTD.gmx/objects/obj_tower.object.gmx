@@ -58,7 +58,7 @@ hit_damage = 0;
 
 //hit_range
 //range in tiles within the tower can hit enemies
-hit_range = 0;
+hit_range = 100;
 
 //hit_speed
 //shots per seconds
@@ -150,7 +150,7 @@ splash_rolloff = 0;
             <string>///target enemy
 
 //find target
-tower_get_target();
+target = tower_get_target();
 
 //update target angle if a target was found
 if (target != noone)
@@ -186,12 +186,14 @@ if (reload &lt; 1)
 }
 
 //shoot all bullets that are loaded (the loop is for extremly rapid shooting towers)
-while (reload &gt;= 1)
+if (target != noone)
 {
-    reload = reload - 1;
-    tower_shoot(target);
+    while (reload &gt;= 1)
+    {
+        reload = reload - 1;
+        tower_shoot(target);
+    }
 }
-    
 </string>
           </argument>
         </arguments>

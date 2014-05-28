@@ -1,9 +1,11 @@
 ///tower_get_target()
 //find and choose a target to shoot according to the selected target priority
 
+var target = noone;
+
 if (target_priority == 0)
 {
-    var target = noone;
+    //target priority: nearest to king
     var bestscore = 0;
     with (obj_enemy)
     {
@@ -13,12 +15,10 @@ if (target_priority == 0)
             if (target == noone or newscore < bestscore)
             {
                 bestscore = newscore;
-                target = self;
+                target = id;
             }
         }
-}
-    //target priority: nearest to king
-    //todo: add selecting code
+    }
 } else if (target_priority == 1)
 {
     //target priority: lowest health
@@ -52,3 +52,5 @@ if (target_priority == 0)
     //target priority: flying
     //todo: add selecting code
 }
+
+return target
