@@ -54,7 +54,7 @@ tower_size = 1;
 
 //hit_damage
 //damage per hit
-hit_damage = 0;
+hit_damage = 10;
 
 //hit_range
 //range in tiles within the tower can hit enemies
@@ -110,7 +110,7 @@ can_target_air = true;
 //6 = groups
 //7 = ground
 //8 = flying
-target_priority = 2;
+target_priority = 0;
 
 // ---- attack stats ----
 
