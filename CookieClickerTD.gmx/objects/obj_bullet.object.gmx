@@ -59,7 +59,11 @@
 if place_meeting(x, y, target)
 {
     //todo: add damaging code
-    target.hitpoints -= 10;
+    with (target)
+    {
+        enemy_damage(10);
+    }
+    
     //destroy bullet
     instance_destroy()
     

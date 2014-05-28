@@ -26,7 +26,6 @@ if (target_priority == 0)
     {
         if point_distance(x,y,other.center_x,other.center_y)<other.hit_range
         {
-            var lowest_health = hitpoints;
             if (target == noone or hitpoints < lowest_health)
             {
                 lowest_health = hitpoints;
