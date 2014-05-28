@@ -133,6 +133,8 @@ is_flying = false;
             <string>///rotate image to movement direction
 image_angle = direction;
 
+var path_left;
+path_left=path_get_length(path_index)-path_position*path_get_length(path_index);
 </string>
           </argument>
         </arguments>

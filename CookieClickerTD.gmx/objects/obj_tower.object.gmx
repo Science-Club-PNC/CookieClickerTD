@@ -150,8 +150,7 @@ splash_rolloff = 0;
             <string>///target enemy
 
 //find target
-//todo change targeting function to tower_get_target when it's finished
-target = instance_nearest(center_x, center_y, obj_enemy);
+tower_get_target();
 
 //update target angle if a target was found
 if (target != noone)

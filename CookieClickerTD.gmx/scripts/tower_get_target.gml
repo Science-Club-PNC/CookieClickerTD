@@ -3,7 +3,20 @@
 
 if (target_priority == 0)
 {
-    
+    var target = noone;
+    var bestscore = 0;
+    with (obj_enemy)
+    {
+        if point_distance(x,y,other.center_x,other.center_y)<other.hit_range
+        {
+            var newscore = path_get_length(path_index)-path_position*path_get_length(path_index);
+            if (target == noone or newscore < bestscore)
+            {
+                bestscore = newscore;
+                target = self;
+            }
+        }
+}
     //target priority: nearest to king
     //todo: add selecting code
 } else if (target_priority == 1)
