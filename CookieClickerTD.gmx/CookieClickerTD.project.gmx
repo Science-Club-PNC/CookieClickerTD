@@ -75,14 +75,23 @@
       <script>scripts\wall_grid_add.gml</script>
       <script>scripts\wall_grid_remove.gml</script>
     </scripts>
+    <scripts name="view">
+      <script>scripts\view_move.gml</script>
+    </scripts>
   </scripts>
   <objects name="objects">
     <object>objects\obj_tower</object>
     <object>objects\obj_enemy</object>
-    <object>objects\obj_game</object>
     <object>objects\obj_wall</object>
     <object>objects\obj_king_cookie</object>
     <object>objects\obj_bullet</object>
+    <objects name="controllers">
+      <object>objects\obj_game_controller</object>
+      <object>objects\obj_view_controller</object>
+      <object>objects\obj_pause_controller</object>
+      <object>objects\obj_settings_controller</object>
+      <object>objects\obj_pathfinding_controller</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\room_test</room>
