@@ -1,6 +1,8 @@
 ///view_move(dx, dy)
 //moves the view by (dx, dy) pixels
 
+
+
 var did_not_clamp = true;
 
 view_xview[view_current] += argument0;

@@ -1,4 +1,4 @@
-///wall_grid_add()
+///wall_grid_remove()
 //removes a wall from the wall grid
 
 //add wall to the wall_grid

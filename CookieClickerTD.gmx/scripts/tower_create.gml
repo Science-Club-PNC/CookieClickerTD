@@ -1,4 +1,4 @@
-///create_tower(x, y, type, class, size)
+///tower_create(x, y, type, class, size)
 //creates a tower and returns it
 
 var abs_x = argument0*tile_size;
