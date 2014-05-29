@@ -46,7 +46,7 @@ enemy_level = 1;
 
 //max_hitpoints
 //amount of hitpoints when fully healed
-max_hitpoints = 30;
+max_hitpoints = 100;
 hitpoints = 30;
 
 //armor_level
@@ -159,8 +159,8 @@ instance_destroy()
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_text(10, 20, string(hitpoints));
-draw_self()
+            <string>draw_self();
+draw_text(x, y-20, string(hitpoints));
 </string>
           </argument>
         </arguments>

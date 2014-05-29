@@ -54,15 +54,15 @@ tower_size = 1;
 
 //hit_damage
 //damage per hit
-hit_damage = 10;
+hit_damage = 0;
 
 //hit_range
 //range in tiles within the tower can hit enemies
-hit_range = 100;
+hit_range = 0;
 
 //hit_speed
 //shots per seconds
-hit_speed = 2;
+hit_speed = 1;
 
 //reload
 //current state till next shot

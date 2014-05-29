@@ -1,15 +1,14 @@
-///src_create_tower(x, y, type, class, size)
+///create_tower(x, y, type, class, size)
 //creates a tower and returns it
 
 var abs_x = argument0*tile_size;
 var abs_y = argument1*tile_size;
 
 //prevent player from placing multiple towers on the same place
-if (place_meeting(abs_x, abs_y, obj_tower))
+if (collision_rectangle( abs_x, abs_y, abs_x + argument4*tile_size - 1, abs_y + argument4*tile_size - 1, obj_wall, false, false ))
 {
     return noone;
 }
-
 //create tower instance and target it
 with (instance_create(abs_x, abs_y, obj_tower))
 {

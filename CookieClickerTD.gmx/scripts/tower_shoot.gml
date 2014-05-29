@@ -7,6 +7,9 @@ with (instance_create(center_x, center_y, obj_bullet))
     //set target
     target = argument0
     
+    //set origin tower
+    tower = other.id;
+    
     //temp speed assingment
     bullet_speed = 10;
     
