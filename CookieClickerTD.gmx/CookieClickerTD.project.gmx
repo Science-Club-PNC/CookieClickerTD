@@ -91,6 +91,7 @@
       <object>objects\obj_pause_controller</object>
       <object>objects\obj_settings_controller</object>
       <object>objects\obj_pathfinding_controller</object>
+      <object>objects\obj_spawner</object>
     </objects>
   </objects>
   <rooms name="rooms">
