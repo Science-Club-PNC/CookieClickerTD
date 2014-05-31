@@ -80,6 +80,7 @@
     </scripts>
   </scripts>
   <objects name="objects">
+    <object>objects\obj_spawner</object>
     <object>objects\obj_tower</object>
     <object>objects\obj_enemy</object>
     <object>objects\obj_wall</object>
@@ -91,7 +92,7 @@
       <object>objects\obj_pause_controller</object>
       <object>objects\obj_settings_controller</object>
       <object>objects\obj_pathfinding_controller</object>
-      <object>objects\obj_spawner</object>
+      <object>objects\obj_spawn_controller</object>
     </objects>
   </objects>
   <rooms name="rooms">
