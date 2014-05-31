@@ -56,9 +56,14 @@ mouse_last_y = 0;
             <string>///move view
 if (mouse_drag)
 {
-    if (!view_move(mouse_last_x - mouse_x, mouse_last_y - mouse_y))
+    clamp_sides = view_move(mouse_last_x - mouse_x, mouse_last_y - mouse_y);
+    
+    if (clamp_sides == 1 or clamp_sides == 3)
     {
         mouse_last_x = mouse_x;
+    }
+    if (clamp_sides == 2 or clamp_sides == 3)
+    {
         mouse_last_y = mouse_y;
     }
 }
@@ -87,6 +92,8 @@ if (mouse_drag)
             <string>///disable mouse drag
 
 mouse_drag = false;
+
+keyboard_check_direct(vk_control);
 </string>
           </argument>
         </arguments>
@@ -111,7 +118,7 @@ mouse_drag = false;
             <kind>1</kind>
             <string>///enable mouse drag if control is pressed
 
-if keyboard_check_direct(vk_control)
+if keyboard_check(vk_control)
 {
     mouse_drag = true;
     

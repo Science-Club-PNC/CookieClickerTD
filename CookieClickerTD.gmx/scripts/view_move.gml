@@ -3,31 +3,35 @@
 
 
 
-var did_not_clamp = true;
+var clamp_sides = 0;
+//0 = none
+//1 = horizontal
+//2 = vertical
+//3 = both
 
-view_xview[view_current] += argument0;
-view_yview[view_current] += argument1;
+view_xview[game_view] += argument0;
+view_yview[game_view] += argument1;
 
-if (view_xview[view_current] < 0)
+if (view_xview[game_view] < 0)
 {
-    view_xview[view_current] = 0;
-    did_not_clamp = false;
+    view_xview[game_view] = 0;
+    clamp_sides = 1;
 }
-else if (view_xview[view_current] > room_width - view_wview[view_current])
+else if (view_xview[game_view] > room_width - view_wview[game_view])
 {
-    view_xview[view_current] = room_width - view_wview[view_current];
-    did_not_clamp = false;
-}
-
-if (view_yview[view_current] < 0)
-{
-    view_yview[view_current] = 0;
-    did_not_clamp = false;
-}
-else if (view_yview[view_current] > room_height - view_hview[view_current])
-{
-    view_yview[view_current] = room_height - view_hview[view_current];
-    did_not_clamp = false;
+    view_xview[game_view] = room_width - view_wview[game_view];
+    clamp_sides = 1;
 }
 
-return did_not_clamp;
+if (view_yview[game_view] < 0)
+{
+    view_yview[game_view] = 0;
+    clamp_sides += 2;
+}
+else if (view_yview[game_view] > room_height - view_hview[game_view])
+{
+    view_yview[game_view] = room_height - view_hview[game_view];
+    clamp_sides += 2;
+}
+
+return clamp_sides;
