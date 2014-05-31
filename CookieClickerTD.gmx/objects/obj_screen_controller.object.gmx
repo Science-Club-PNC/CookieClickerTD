@@ -25,14 +25,11 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///init drag
+            <string>///init screen
+last_window_width = window_get_width();
+last_window_height = window_get_height();
 
-mouse_drag = false;
-
-mouse_last_x = 0;
-mouse_last_y = 0;
-
-view_set_zoom(1);
+screen_resize();
 </string>
           </argument>
         </arguments>
@@ -55,77 +52,13 @@ view_set_zoom(1);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///move view
-if (mouse_drag)
+            <string>///resize screen
+if ((last_window_width != window_get_width()) or (last_window_height != window_get_height()))
 {
-    clamp_sides = view_move(mouse_last_x - mouse_x, mouse_last_y - mouse_y);
+    last_window_width = window_get_width();
+    last_window_height = window_get_height();
     
-    if (clamp_sides == 1 or clamp_sides == 3)
-    {
-        mouse_last_x = mouse_x;
-    }
-    if (clamp_sides == 2 or clamp_sides == 3)
-    {
-        mouse_last_y = mouse_y;
-    }
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="6" enumb="56">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///disable mouse drag
-
-mouse_drag = false;
-
-keyboard_check_direct(vk_control);
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="6" enumb="53">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///enable mouse drag if control is pressed
-
-if keyboard_check(vk_control)
-{
-    mouse_drag = true;
-    
-    mouse_last_x = mouse_x;
-    mouse_last_y = mouse_y;
+    screen_resize();
 }
 </string>
           </argument>

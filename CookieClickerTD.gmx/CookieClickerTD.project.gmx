@@ -77,9 +77,13 @@
     </scripts>
     <scripts name="view">
       <script>scripts\view_move.gml</script>
+      <script>scripts\view_get_zoom.gml</script>
+      <script>scripts\view_set_zoom.gml</script>
+    </scripts>
+    <scripts name="screen">
+      <script>scripts\screen_resize.gml</script>
     </scripts>
   </scripts>
-  <fonts name="fonts"/>
   <objects name="objects">
     <object>objects\obj_spawner</object>
     <object>objects\obj_tower</object>
@@ -89,9 +93,10 @@
     <object>objects\obj_bullet</object>
     <objects name="controllers">
       <object>objects\obj_game_controller</object>
-      <object>objects\obj_view_controller</object>
-      <object>objects\obj_pause_controller</object>
       <object>objects\obj_settings_controller</object>
+      <object>objects\obj_screen_controller</object>
+      <object>objects\obj_pause_controller</object>
+      <object>objects\obj_view_controller</object>
       <object>objects\obj_pathfinding_controller</object>
       <object>objects\obj_spawn_controller</object>
     </objects>
