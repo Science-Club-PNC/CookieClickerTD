@@ -31,3 +31,12 @@ view_wport[footer_view] = window_width;
 view_hport[footer_view] = footer_height;
 
 view_set_zoom(zoom);
+
+view_wview[menu_view] = view_wport[menu_view];
+view_hview[menu_view] = view_hport[menu_view];
+
+view_wview[header_view] = view_wport[header_view];
+view_hview[header_view] = view_hport[header_view];
+
+view_wview[footer_view] = view_wport[footer_view];
+view_hview[footer_view] = view_hport[footer_view];
