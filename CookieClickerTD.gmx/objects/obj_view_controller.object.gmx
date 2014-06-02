@@ -2,7 +2,7 @@
 <object>
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
-  <visible>-1</visible>
+  <visible>0</visible>
   <depth>0</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
@@ -56,7 +56,7 @@ view_set_zoom(1);
           <argument>
             <kind>1</kind>
             <string>///mouse drag view
-if (mouse_drag)
+if (mouse_drag and view_mouse_inside(game_view))
 {
     clamp_sides = view_move(mouse_last_x - mouse_x, mouse_last_y - mouse_y);
     
@@ -119,8 +119,6 @@ if (keyboard_check(vk_space))
             <string>///disable mouse drag
 
 mouse_drag = false;
-
-keyboard_check_direct(vk_control);
 </string>
           </argument>
         </arguments>
@@ -145,7 +143,7 @@ keyboard_check_direct(vk_control);
             <kind>1</kind>
             <string>///enable mouse drag if control is pressed
 
-if keyboard_check(vk_control)
+if (keyboard_check(vk_control) and view_mouse_inside(game_view))
 {
     mouse_drag = true;
     

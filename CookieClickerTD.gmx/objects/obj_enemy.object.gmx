@@ -74,6 +74,32 @@ is_flying = false;
       </action>
       <action>
         <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>sprite_index = choose(spr_cursor_pointer, spr_cursor_finger);
+
+var scale = random_range(0.1,0.25)
+
+image_xscale = scale;
+image_yscale = scale;
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
         <id>601</id>
         <kind>0</kind>
         <userelative>0</userelative>
@@ -132,6 +158,10 @@ is_flying = false;
             <kind>1</kind>
             <string>///rotate image to movement direction
 image_angle = direction;
+if (sprite_index == spr_cursor_pointer)
+{
+    image_angle -= 20
+}
 
 if hitpoints &lt;= 0 
 {

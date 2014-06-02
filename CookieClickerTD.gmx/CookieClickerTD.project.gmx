@@ -50,6 +50,8 @@
     <sprite>sprites\spr_enemy</sprite>
     <sprite>sprites\spr_bullet</sprite>
     <sprite>sprites\spr_tower_turret</sprite>
+    <sprite>sprites\spr_cursor_pointer</sprite>
+    <sprite>sprites\spr_cursor_finger</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\back_grid</background>
@@ -89,6 +91,7 @@
       <script>scripts\draw_header.gml</script>
       <script>scripts\draw_footer.gml</script>
     </scripts>
+    <script>scripts\view_mouse_inside.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\obj_spawner</object>
