@@ -83,6 +83,12 @@
     <scripts name="screen">
       <script>scripts\screen_resize.gml</script>
     </scripts>
+    <scripts name="draw">
+      <script>scripts\draw_game.gml</script>
+      <script>scripts\draw_menu.gml</script>
+      <script>scripts\draw_header.gml</script>
+      <script>scripts\draw_footer.gml</script>
+    </scripts>
   </scripts>
   <objects name="objects">
     <object>objects\obj_spawner</object>

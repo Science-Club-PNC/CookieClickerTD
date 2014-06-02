@@ -8,7 +8,33 @@
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
-    <event eventtype="8" enumb="72">
+    <event eventtype="0" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>for (i=0; i&lt;=7; i++;)
+{
+    background_visible[i] = false;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -28,14 +54,25 @@
             <string>switch (view_current)
 {
     case game_view:
-        draw_enable_drawevent(true);
-        break;
+    draw_game();
+    break;
+    
     case menu_view:
+    draw_menu();
+    break;
+    
     case header_view:
+    draw_header();
+    break;
+    
     case footer_view:
-        draw_enable_drawevent(true);
-        break;
+    draw_footer();
+    break;
 }
+
+draw_set_colour(c_blue);
+draw_rectangle(view_xview[view_current], view_yview[view_current], view_xview[view_current] + view_wview[view_current], view_yview[view_current] + view_hview[view_current], true);
+draw_text(view_xview[view_current], view_yview[view_current], "view: " + string(view_current));
 </string>
           </argument>
         </arguments>
