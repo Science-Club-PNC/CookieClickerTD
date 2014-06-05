@@ -139,6 +139,48 @@ image_yscale = scale;
         </arguments>
       </action>
     </event>
+    <event eventtype="1" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>//draw corpse to corpse surface
+if surface_exists(obj_draw_controller.corpse_surf)
+{
+    surface_set_target(obj_draw_controller.corpse_surf);
+
+    //draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, image_blend, image_alpha*0.6);
+    var width = sprite_get_width(sprite_index);
+    var height = sprite_get_height(sprite_index);
+    var pos_spread = 16;
+    var angle_spread = 8;
+    var alpha = image_alpha*0.6;
+    
+    
+    draw_sprite_general(sprite_index, image_index, 0      , 0       , width/2, height/2, x + random_range(-1, 1)*pos_spread, y + random_range(-1, 1)*pos_spread, image_xscale, image_yscale, image_angle + random_range(-1, 1)*angle_spread, image_blend, image_blend, image_blend, image_blend, alpha);
+    draw_sprite_general(sprite_index, image_index, width/2, 0       , width/2, height/2, x + random_range(-1, 1)*pos_spread, y + random_range(-1, 1)*pos_spread, image_xscale, image_yscale, image_angle + random_range(-1, 1)*angle_spread, image_blend, image_blend, image_blend, image_blend, alpha);
+    draw_sprite_general(sprite_index, image_index, 0      , height/2, width/2, height/2, x + random_range(-1, 1)*pos_spread, y + random_range(-1, 1)*pos_spread, image_xscale, image_yscale, image_angle + random_range(-1, 1)*angle_spread, image_blend, image_blend, image_blend, image_blend, alpha);
+    draw_sprite_general(sprite_index, image_index, width/2, height/2, width/2, height/2, x + random_range(-1, 1)*pos_spread, y + random_range(-1, 1)*pos_spread, image_xscale, image_yscale, image_angle + random_range(-1, 1)*angle_spread, image_blend, image_blend, image_blend, image_blend, alpha);
+
+    surface_reset_target();
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
