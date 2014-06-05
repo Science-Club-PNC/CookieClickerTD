@@ -93,7 +93,6 @@
       <script>scripts\draw_footer.gml</script>
     </scripts>
   </scripts>
-  <shaders name="shaders"/>
   <objects name="objects">
     <object>objects\obj_spawner</object>
     <object>objects\obj_tower</object>

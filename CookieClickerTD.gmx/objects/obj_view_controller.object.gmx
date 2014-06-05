@@ -33,6 +33,7 @@ mouse_last_x = 0;
 mouse_last_y = 0;
 
 view_set_zoom(1);
+zoom = 1;
 </string>
           </argument>
         </arguments>
@@ -94,6 +95,56 @@ if (keyboard_check(vk_space))
 {
     view_set_zoom(view_get_zoom()+0.1);
 }
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="6" enumb="61">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if(zoom - 0.2 &gt;= 1){
+zoom = zoom - 0.2}
+view_set_zoom(zoom)
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="6" enumb="60">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if(zoom + 0.2 &lt;= 4){
+zoom = zoom + 0.2}
+view_set_zoom(zoom)
 </string>
           </argument>
         </arguments>
