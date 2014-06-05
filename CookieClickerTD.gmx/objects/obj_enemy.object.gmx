@@ -88,12 +88,24 @@ is_flying = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>sprite_index = choose(spr_cursor_pointer, spr_cursor_finger);
+            <string>///sprite init
+sprite_index = choose(spr_cursor_pointer, spr_cursor_finger);
 
-var scale = random_range(0.1,0.25)
+var scale;
+if (irandom(6) == 0)
+{
+scale = random_range(0.2,0.3)
+image_blend = make_colour_hsv(irandom(255),irandom_range(200,255),255);
+}
+else
+{
+scale = random_range(0.1,0.2)
+image_blend = c_white;
+}
 
 image_xscale = scale;
 image_yscale = scale;
+
 </string>
           </argument>
         </arguments>
@@ -166,7 +178,7 @@ if surface_exists(obj_draw_controller.corpse_surf)
     var height = sprite_get_height(sprite_index);
     var pos_spread = 16;
     var angle_spread = 8;
-    var alpha = image_alpha*0.6;
+    var alpha = image_alpha*0.8;
     
     
     draw_sprite_general(sprite_index, image_index, 0      , 0       , width/2, height/2, x + random_range(-1, 1)*pos_spread, y + random_range(-1, 1)*pos_spread, image_xscale, image_yscale, image_angle + random_range(-1, 1)*angle_spread, image_blend, image_blend, image_blend, image_blend, alpha);

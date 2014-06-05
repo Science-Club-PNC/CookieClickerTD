@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (irandom(50) == 0)
+            <string>if (irandom(30) == 0)
 {
     with (instance_find(obj_spawner, irandom(instance_number(obj_spawner) - 1)))
     {
