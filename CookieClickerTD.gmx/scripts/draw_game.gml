@@ -1,6 +1,8 @@
 ///draw_game()
 //draws the game in the current view
 
+shader_set(sh_main);
+
 draw_background_tiled(back_grass, 0, 0);
 
 with(obj_king_cookie)
