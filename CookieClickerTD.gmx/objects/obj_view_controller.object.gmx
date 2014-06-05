@@ -117,9 +117,12 @@ if (keyboard_check(vk_space))
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(zoom - 0.2 &gt;= 1){
-zoom = zoom - 0.2}
-view_set_zoom(zoom)
+            <string>///zoom out
+if(zoom - 0.2 &gt;= 1)
+{
+    zoom = zoom - 0.2;
+    view_set_zoom(zoom);
+}
 </string>
           </argument>
         </arguments>
@@ -142,9 +145,12 @@ view_set_zoom(zoom)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(zoom + 0.2 &lt;= 4){
-zoom = zoom + 0.2}
-view_set_zoom(zoom)
+            <string>///zoom in
+if(zoom + 0.2 &lt;= 4)
+{
+    zoom = zoom + 0.2;
+    view_set_zoom(zoom);
+}
 </string>
           </argument>
         </arguments>
