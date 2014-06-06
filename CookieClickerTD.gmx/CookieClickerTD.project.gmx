@@ -75,7 +75,10 @@
     <scripts name="wall_grid">
       <script>scripts\wall_grid_init.gml</script>
       <script>scripts\wall_grid_add.gml</script>
+      <script>scripts\wall_grid_add_area.gml</script>
       <script>scripts\wall_grid_remove.gml</script>
+      <script>scripts\wall_grid_remove_area.gml</script>
+      <script>scripts\wall_grid_can_place.gml</script>
     </scripts>
     <scripts name="view">
       <script>scripts\view_move.gml</script>
