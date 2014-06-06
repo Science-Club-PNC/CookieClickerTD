@@ -95,6 +95,9 @@
       <script>scripts\draw_header.gml</script>
       <script>scripts\draw_footer.gml</script>
     </scripts>
+    <scripts name="utils">
+      <script>scripts\string_split.gml</script>
+    </scripts>
   </scripts>
   <objects name="objects">
     <object>objects\obj_spawner</object>
