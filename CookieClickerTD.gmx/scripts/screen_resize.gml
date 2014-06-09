@@ -1,5 +1,6 @@
 ///screen_resize()
-//resizes and reposition all the views
+//resizes and reposition all the views 
+//also resizes the application surface
 
 var window_width = window_get_width();
 var window_height = window_get_height();
