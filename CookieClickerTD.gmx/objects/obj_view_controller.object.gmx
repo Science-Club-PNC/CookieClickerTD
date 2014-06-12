@@ -117,9 +117,12 @@ if (keyboard_check(vk_space))
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(zoom - 0.2 &gt;= 1){
-zoom = zoom - 0.2}
-view_set_zoom(zoom)
+            <string>///zoom out
+if(zoom - 0.2 &gt;= 1)
+{
+    zoom = zoom - 0.2;
+    view_set_zoom(zoom);
+}
 </string>
           </argument>
         </arguments>
@@ -142,9 +145,40 @@ view_set_zoom(zoom)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(zoom + 0.2 &lt;= 4){
-zoom = zoom + 0.2}
-view_set_zoom(zoom)
+            <string>///zoom in
+if(zoom + 0.2 &lt;= 4)
+{
+    zoom = zoom + 0.2;
+    view_set_zoom(zoom);
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="6" enumb="58">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///disable mouse drag if left mouse button is not pressed
+
+if !mouse_check_button(mb_left)
+{
+    mouse_drag = false;
+}
 </string>
           </argument>
         </arguments>
@@ -167,9 +201,40 @@ view_set_zoom(zoom)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///disable mouse drag
+            <string>///disable mouse drag if middle mouse button is not pressed
 
-mouse_drag = false;
+if !mouse_check_button(mb_middle)
+{
+    mouse_drag = false;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="6" enumb="55">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///enable mouse drag
+
+mouse_drag = true;
+    
+mouse_last_x = mouse_x;
+mouse_last_y = mouse_y;
 </string>
           </argument>
         </arguments>

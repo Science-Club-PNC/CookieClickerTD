@@ -65,6 +65,9 @@
       <script>scripts\enemy_find_path.gml</script>
       <script>scripts\enemy_update_paths.gml</script>
       <script>scripts\enemy_damage.gml</script>
+      <scripts name="wave">
+        <script>scripts\enemy_wave_create.gml</script>
+      </scripts>
     </scripts>
     <scripts name="tower">
       <script>scripts\tower_stats_update.gml</script>
@@ -75,7 +78,10 @@
     <scripts name="wall_grid">
       <script>scripts\wall_grid_init.gml</script>
       <script>scripts\wall_grid_add.gml</script>
+      <script>scripts\wall_grid_add_area.gml</script>
       <script>scripts\wall_grid_remove.gml</script>
+      <script>scripts\wall_grid_remove_area.gml</script>
+      <script>scripts\wall_grid_can_place.gml</script>
     </scripts>
     <scripts name="view">
       <script>scripts\view_move.gml</script>
@@ -92,8 +98,8 @@
       <script>scripts\draw_header.gml</script>
       <script>scripts\draw_footer.gml</script>
     </scripts>
-    <scripts name="control">
-      <script>scripts\money_checker.gml</script>
+    <scripts name="utils">
+      <script>scripts\string_split.gml</script>
     </scripts>
   </scripts>
   <objects name="objects">
@@ -112,7 +118,6 @@
       <object>objects\obj_view_controller</object>
       <object>objects\obj_pathfinding_controller</object>
       <object>objects\obj_spawn_controller</object>
-      <object>objects\obj_possesion_controller</object>
     </objects>
   </objects>
   <rooms name="rooms">

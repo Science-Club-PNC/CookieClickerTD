@@ -1,5 +1,6 @@
 ///screen_resize()
-//resizes and reposition all the views
+//resizes and reposition all the views 
+//also resizes the application surface
 
 var window_width = window_get_width();
 var window_height = window_get_height();
@@ -9,6 +10,8 @@ var footer_height = 20;
 var menu_width = 200;
 
 var zoom = view_get_zoom();
+
+surface_resize(application_surface, window_width, window_height);
 
 view_xport[game_view] = 0;
 view_yport[game_view] = header_height;

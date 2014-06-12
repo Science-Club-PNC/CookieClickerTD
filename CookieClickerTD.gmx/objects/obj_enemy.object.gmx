@@ -188,7 +188,6 @@ if surface_exists(obj_draw_controller.corpse_surf)
 
     surface_reset_target();
 }
-obj_possesion_controller.money += 1
 </string>
           </argument>
         </arguments>
