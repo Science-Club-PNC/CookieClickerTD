@@ -4,16 +4,16 @@
 
 //It can take money off too
 
-money = argument0; //The price of something
+var money = argument0; //The price of something
 
-check = argument1; //The option to eddit money
+var check = argument1; //The option to eddit money
 
-control_money = obj_possesion_controller.money;
+var control_money = obj_possesion_controller.money;
 
 if (control_money >= money){
     return true;
     if(b){
-        obj_possesion_controller.money -= a;
+        obj_possesion_controller.money -= money;
         }
     }
 else {
