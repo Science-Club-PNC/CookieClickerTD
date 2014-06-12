@@ -1,21 +1,24 @@
-//money_checker(price,option to edit the money)
+//money_checker(price,edit)
 
 //Function to check if there is enough money
 
 //It can take money off too
 
-var money = argument0; //The price of something
+var price = argument0; //The price of something
 
-var check = argument1; //The option to eddit money
+var check = argument1; //The option to edit money
 
 var control_money = obj_possesion_controller.money;
 
-if (control_money >= money){
+if (control_money >= price)
+    {
     return true;
-    if(b){
+    if(b)
+        {
         obj_possesion_controller.money -= money;
         }
     }
-else {
+else 
+    {
     return false;
     }
