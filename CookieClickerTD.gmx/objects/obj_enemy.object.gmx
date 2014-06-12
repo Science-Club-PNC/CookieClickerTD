@@ -188,6 +188,9 @@ if surface_exists(obj_draw_controller.corpse_surf)
 
     surface_reset_target();
 }
+
+//todo: add bounty attribute in enemy
+obj_money_controller.money += 1;
 </string>
           </argument>
         </arguments>
