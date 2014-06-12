@@ -16,8 +16,6 @@ switch (tower_type)
 }
 var class = string(tower_class);
 
-upgrades = string_split(ini_read_string(class, "upgrades", ""), "|");
-
 hit_damage = ini_read_real(class, "hit_damage", 0);
 hit_range = ini_read_real(class, "hit_range", 0);
 hit_speed = ini_read_real(class, "hit_speed", 0);
