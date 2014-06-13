@@ -50,7 +50,7 @@ for (var cur_subwave = 0; cur_subwave < subwave_amount; cur_subwave++)
         //pick a chance
         var type_choice_num = random(type_chances_total);
         
-        //dermiter what enemy type the chance is
+        //determine what enemy type the chance is
         for (var i = 0; i <= 4; i++)
         {
             type_choice_num -= type_chances[i];
@@ -97,11 +97,66 @@ for (var cur_subwave = 0; cur_subwave < subwave_amount; cur_subwave++)
     //todo: add special power multiplier
     var enemy_power = subwave_power/subwave_amount;
     
-    //todo: divide (somewhat randomly) enemy power to enemy stats
+    //determine enemy stats
+    //todo: balance stats
+    var enemy_hitpoints, enemy_armor, enemy_speed;
+    {
+        //divide enemy power to enemy stats
+        switch (subwave_type)
+        {
+            case 0: //normal
+            enemy_hitpoints = random_range(2,3);
+            enemy_armor = random_range(0.5,1.5);
+            enemy_speed = random_range(0.7,1.3);
+            break;
+            
+            case 1: //swarm
+            enemy_hitpoints = random_range(2,3);
+            enemy_armor = random_range(0.5,1);
+            enemy_speed = random_range(1,1.5);
+            break;
+            
+            case 2: //heavy
+            enemy_hitpoints = random_range(2,3);
+            enemy_armor = random_range(0.5,1.7);
+            enemy_speed = random_range(0.5,1);
+            break;
+            
+            case 3: //flying
+            enemy_hitpoints = random_range(2,3);
+            enemy_armor = random_range(0.3,1);
+            enemy_speed = random_range(0.6,1.6);
+            break;
+            
+            case 4: //boss
+            enemy_hitpoints = random_range(2,3);
+            enemy_armor = random_range(0.5,1.5);
+            enemy_speed = random_range(0.2,0.4);
+            break;
+        }
+        
+        //review enemy stats division
+        var enemy_division_total = enemy_hitpoints*enemy_armor*enemy_speed;
+        
+        enemy_hitpoints /= enemy_division_total;
+        enemy_armor /= enemy_division_total;
+        enemy_speed /= enemy_division_total;
+        
+        //set to actual stats
+        enemy_hitpoints = round(10*enemy_hitpoints*enemy_power);
+        enemy_armor = round(0.1*enemy_armor*enemy_power);
+        enemy_speed = 2*enemy_speed;
+    }
     
     //todo: determine some visual stats
     
     //todo: save stats in subwave map
+    subwave[?'subwave_type'] = subwave_type;
+    subwave[?'subwave_amount'] = subwave_amount;
+    
+    subwave[?'enemy_hitpoints'] = enemy_hitpoints;
+    subwave[?'enemy_armor'] = enemy_armor;
+    subwave[?'enemy_speed'] = enemy_speed;
     
     ds_list_add(subwaves, subwave);
 }

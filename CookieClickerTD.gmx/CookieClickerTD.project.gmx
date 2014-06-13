@@ -105,6 +105,9 @@
       <script>scripts\money_checker.gml</script>
     </scripts>
   </scripts>
+  <fonts name="fonts">
+    <font>fonts\font_debug</font>
+  </fonts>
   <objects name="objects">
     <object>objects\obj_spawner</object>
     <object>objects\obj_tower</object>
