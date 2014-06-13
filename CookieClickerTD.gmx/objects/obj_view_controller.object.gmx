@@ -34,6 +34,7 @@ mouse_last_y = 0;
 
 view_set_zoom(1);
 zoom = 1;
+pause = false
 </string>
           </argument>
         </arguments>
@@ -145,12 +146,13 @@ if(zoom - 0.2 &gt;= 1)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///zoom in
+            <string>//zoom in
 if(zoom + 0.2 &lt;= 4)
 {
     zoom = zoom + 0.2;
     view_set_zoom(zoom);
 }
+
 </string>
           </argument>
         </arguments>

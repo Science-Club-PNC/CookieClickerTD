@@ -6,16 +6,16 @@
 
 var price = argument0; //The price of something
 
-var check = argument1; //The option to edit money
+var edit = argument1; //The option to edit money
 
-var control_money = obj_possesion_controller.money;
+var control_money = obj_money_controller.money;
 
 if (control_money >= price)
     {
     return true;
-    if(b)
+    if (edit)
         {
-        obj_possesion_controller.money -= money;
+        obj_money_controller.money -= money;
         }
     }
 else 
