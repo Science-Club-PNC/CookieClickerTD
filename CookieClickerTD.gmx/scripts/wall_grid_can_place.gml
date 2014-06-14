@@ -9,7 +9,12 @@ if (collision_rectangle( abs_x, abs_y, abs_x + argument2*tile_size - 1, abs_y + 
 {
     return false;
 }
-if((abs_x > 97 && abs_x < 319) && (abs_y > -1 && abs_y < 190))
+//Some variables...
+var first_x = obj_king_cookie.x -97
+var first_y = obj_king_cookie.y - 97
+var second_x = obj_king_cookie.x + 95
+var second_y = obj_king_cookie.y + 95
+if((abs_x > first_x && abs_x < second_x) && (abs_y > first_y && abs_y < second_y))
 {
     return false
 }

@@ -118,7 +118,7 @@ tower_create(0, 11, 0, 2, 1);</code>
     <instance objName="obj_enemy" x="480" y="64" name="inst_8D73ED86" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_spawner" x="512" y="288" name="inst_02128FA5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_spawner" x="512" y="160" name="inst_18BEF129" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_king_cookie" x="224" y="96" name="inst_F6CD94FF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_king_cookie" x="192" y="96" name="inst_08617B32" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
