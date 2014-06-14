@@ -5,9 +5,13 @@ var abs_x = argument0*tile_size;
 var abs_y = argument1*tile_size;
 
 //prevent player from placing multiple towers on the same place
-if (collision_rectangle( abs_x, abs_y, abs_x + argument2*tile_size - 1, abs_y + argument2*tile_size - 1, obj_wall, false, false )|| collision_rectangle( abs_x, abs_y, abs_x + argument2*tile_size - 1, abs_y + argument2*tile_size - 1, obj_king_cookie, false, false ) )
+if (collision_rectangle( abs_x, abs_y, abs_x + argument2*tile_size - 1, abs_y + argument2*tile_size - 1, obj_wall, false, false ) )
 {
     return false;
+}
+if((abs_x > 97 && abs_x < 319) && (abs_y > -1 && abs_y < 190))
+{
+    return false
 }
 //temporary add wall to wall grid to test
 wall_grid_add_area(abs_x, abs_y, abs_x + argument2*tile_size - 1, abs_y + argument2*tile_size - 1);
