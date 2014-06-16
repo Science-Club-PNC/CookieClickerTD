@@ -125,6 +125,7 @@
       <object>objects\obj_pathfinding_controller</object>
       <object>objects\obj_spawn_controller</object>
       <object>objects\obj_money_controller</object>
+      <object>objects\obj_selection_controller</object>
     </objects>
   </objects>
   <rooms name="rooms">
