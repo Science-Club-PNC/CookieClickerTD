@@ -25,3 +25,5 @@ view_hview[game_view] = view_hport[game_view]/zoom;
 
 view_xview[game_view] = zoom_x - dif_x/zoom_factor;
 view_yview[game_view] = zoom_y - dif_y/zoom_factor;
+
+view_clamp();

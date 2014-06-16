@@ -88,6 +88,7 @@
       <script>scripts\view_get_zoom.gml</script>
       <script>scripts\view_set_zoom.gml</script>
       <script>scripts\view_mouse_inside.gml</script>
+      <script>scripts\view_clamp.gml</script>
     </scripts>
     <scripts name="screen">
       <script>scripts\screen_resize.gml</script>
