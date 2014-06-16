@@ -9,28 +9,28 @@ var clamp_sides = 0;
 //2 = vertical
 //3 = both
 
-view_xview[game_view] += argument0;
-view_yview[game_view] += argument1;
+view_xview[view_game] += argument0;
+view_yview[view_game] += argument1;
 
-if (view_xview[game_view] < 0)
+if (view_xview[view_game] < 0)
 {
-    view_xview[game_view] = 0;
+    view_xview[view_game] = 0;
     clamp_sides = 1;
 }
-else if (view_xview[game_view] > room_width - view_wview[game_view])
+else if (view_xview[view_game] > room_width - view_wview[view_game])
 {
-    view_xview[game_view] = room_width - view_wview[game_view];
+    view_xview[view_game] = room_width - view_wview[view_game];
     clamp_sides = 1;
 }
 
-if (view_yview[game_view] < 0)
+if (view_yview[view_game] < 0)
 {
-    view_yview[game_view] = 0;
+    view_yview[view_game] = 0;
     clamp_sides += 2;
 }
-else if (view_yview[game_view] > room_height - view_hview[game_view])
+else if (view_yview[view_game] > room_height - view_hview[view_game])
 {
-    view_yview[game_view] = room_height - view_hview[game_view];
+    view_yview[view_game] = room_height - view_hview[view_game];
     clamp_sides += 2;
 }
 
