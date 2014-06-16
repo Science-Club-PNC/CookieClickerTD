@@ -108,6 +108,7 @@
   </scripts>
   <fonts name="fonts">
     <font>fonts\font_debug</font>
+    <font>fonts\font_header</font>
   </fonts>
   <objects name="objects">
     <object>objects\obj_spawner</object>
