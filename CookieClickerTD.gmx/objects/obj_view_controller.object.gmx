@@ -58,7 +58,7 @@ pause = false
           <argument>
             <kind>1</kind>
             <string>///mouse drag view
-if (mouse_drag and view_mouse_inside(game_view))
+if (mouse_drag and view_mouse_inside(view_game))
 {
     clamp_sides = view_move(mouse_last_x - mouse_x, mouse_last_y - mouse_y);
     
@@ -70,31 +70,6 @@ if (mouse_drag and view_mouse_inside(game_view))
     {
         mouse_last_y = mouse_y;
     }
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///zoom view
-if (keyboard_check(vk_space))
-{
-    view_set_zoom(view_get_zoom()+0.1);
 }
 </string>
           </argument>
@@ -118,12 +93,17 @@ if (keyboard_check(vk_space))
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///zoom out
-if(zoom - 0.2 &gt;= 0.5)
+            <string>///zoom in
+var zoom_step = 0.2;
+var rounded_zoom = round(zoom/zoom_step)*zoom_step
+var next_zoom = rounded_zoom - zoom_step;
+
+if(next_zoom &gt;= 0.5)
 {
-    zoom = zoom - 0.2;
+    zoom = next_zoom;
     view_set_zoom(zoom);
 }
+
 </string>
           </argument>
         </arguments>
@@ -146,10 +126,14 @@ if(zoom - 0.2 &gt;= 0.5)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//zoom in
-if(zoom + 0.2 &lt;= 4)
+            <string>///zoom in
+var zoom_step = 0.2;
+var rounded_zoom = round(zoom/zoom_step)*zoom_step
+var next_zoom = rounded_zoom + zoom_step;
+
+if(next_zoom &lt;= 4)
 {
-    zoom = zoom + 0.2;
+    zoom = next_zoom;
     view_set_zoom(zoom);
 }
 
@@ -261,7 +245,7 @@ mouse_last_y = mouse_y;
             <kind>1</kind>
             <string>///enable mouse drag if control is pressed
 
-if (keyboard_check(vk_control) and view_mouse_inside(game_view))
+if (keyboard_check(vk_control) and view_mouse_inside(view_game))
 {
     mouse_drag = true;
     

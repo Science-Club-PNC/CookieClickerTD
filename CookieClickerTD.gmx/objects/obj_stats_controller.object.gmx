@@ -25,39 +25,25 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///disable backgrounds
-for (i=0; i&lt;=7; i++;)
-{
-    background_visible[i] = false;
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///init corpse surface
-corpse_surf = -1;
+            <string>//init position variables
+stats_width = 200;
+stats_max_width = 200;
+
+stats_anim_state = 1;
+stats_anim_speed = 0.01;
+
+buy_height = 0;
+buy_max_height = 100;
+
+buy_open = true;
+buy_anim_state = 0;
+buy_anim_speed = 0.05;
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="7" enumb="5">
+    <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -74,87 +60,69 @@ corpse_surf = -1;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///free corpse surface
-if surface_exists(corpse_surf)
+            <string>if (obj_selection_controller.selection_type == 0)
 {
-    surface_free(corpse_surf);
+    if (stats_anim_state &gt; 0)
+    {
+        stats_anim_state = max(stats_anim_state - stats_anim_speed, 0);
+
+        screen_set_stats_width(stats_max_width*stats_anim_state);
+    }
 }
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="8" enumb="76">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///create surface
-if !surface_exists(corpse_surf)
+else
 {
-    corpse_surf = surface_create(room_width, room_height);
-    surface_set_target(corpse_surf);
-    draw_clear_alpha(c_black, 0);
-    surface_reset_target();
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="8" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///call draw functions
-switch (view_current)
-{
-    case view_game:
-    draw_game();
-    break;
-    
-    case view_stats:
-    draw_stats();
-    break;
-    
-    case view_header:
-    draw_header();
-    break;
-    
-    case view_footer:
-    draw_footer();
-    break;
+    if (stats_anim_state &lt; 1)
+    {
+        stats_anim_state = min(stats_anim_state + stats_anim_speed, 1);
+
+        screen_set_stats_width(stats_max_width*stats_anim_state);
+    }
 }
 
-//draw debug view identification 
-//draw_set_colour(c_blue);
-//draw_rectangle(view_xview[view_current], view_yview[view_current], view_xview[view_current] + view_wview[view_current], view_yview[view_current] + view_hview[view_current], true);
-//draw_text(view_xview[view_current], view_yview[view_current], "view: " + string(view_current));
+if (buy_open)
+{
+    if (buy_anim_state &lt; 1)
+    {
+        buy_anim_state = min(buy_anim_state + buy_anim_speed, 1);
+
+        screen_set_buy_height(buy_max_height*buy_anim_state);
+    }
+}
+else
+{
+    if (buy_anim_state &gt; 0)
+    {
+        buy_anim_state = max(buy_anim_state - buy_anim_speed, 0);
+
+        screen_set_buy_height(buy_max_height*buy_anim_state);
+    }
+}
+
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="9" enumb="66">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///open/close buy screen
+buy_open = !buy_open
 </string>
           </argument>
         </arguments>

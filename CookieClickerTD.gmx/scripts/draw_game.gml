@@ -43,7 +43,7 @@ with (obj_enemy)
 draw_background_tiled_ext(back_grid, 0, 0, tile_size/background_get_width(back_grid),tile_size/background_get_height(back_grid), -1, 1);
 
 //debug: draw enemy stats
-if view_mouse_inside(game_view)
+if view_mouse_inside(view_game)
 {
     draw_set_colour(c_white);
     draw_set_valign(fa_bottom);
