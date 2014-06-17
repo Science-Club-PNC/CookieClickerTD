@@ -132,7 +132,7 @@ if !surface_exists(corpse_surf)
           <argument>
             <kind>1</kind>
             <string>///call draw functions
-switch (view_current)
+switch (current_view)
 {
     case game_view:
     draw_game();
@@ -153,8 +153,8 @@ switch (view_current)
 
 //draw debug view identification 
 //draw_set_colour(c_blue);
-//draw_rectangle(view_xview[view_current], view_yview[view_current], view_xview[view_current] + view_wview[view_current], view_yview[view_current] + view_hview[view_current], true);
-//draw_text(view_xview[view_current], view_yview[view_current], "view: " + string(view_current));
+//draw_rectangle(view_xview[current_view], view_yview[current_view], view_xview[current_view] + view_wview[current_view], view_yview[current_view] + view_hview[current_view], true);
+//draw_text(view_xview[current_view], view_yview[current_view], "view: " + string(current_view));
 </string>
           </argument>
         </arguments>
