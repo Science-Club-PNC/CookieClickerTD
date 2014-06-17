@@ -134,19 +134,19 @@ if !surface_exists(corpse_surf)
             <string>///call draw functions
 switch (view_current)
 {
-    case view_game:
+    case game_view:
     draw_game();
     break;
     
-    case view_stats:
+    case stats_view:
     draw_stats();
     break;
     
-    case view_header:
+    case header_view:
     draw_header();
     break;
     
-    case view_footer:
+    case footer_view:
     draw_footer();
     break;
 }

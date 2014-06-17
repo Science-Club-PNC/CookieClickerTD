@@ -6,11 +6,11 @@ var stats_width = argument0;
 
 obj_stats_controller.stats_width = stats_width;
 
-view_wport[view_game] = window_width - stats_width;
-view_wport[view_stats] = stats_width;
-view_xport[view_stats] = window_width - stats_width;
+view_wport[game_view] = window_width - stats_width;
+view_wport[stats_view] = stats_width;
+view_xport[stats_view] = window_width - stats_width;
 
-view_wview[view_stats] = view_wport[view_stats];
-view_wview[view_game] = view_hview[view_game]/view_hport[view_game]*view_wport[view_game];
+view_wview[stats_view] = view_wport[stats_view];
+view_wview[game_view] = view_hview[game_view]/view_hport[game_view]*view_wport[game_view];
 
 view_clamp();

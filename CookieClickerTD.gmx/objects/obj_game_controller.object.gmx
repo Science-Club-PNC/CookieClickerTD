@@ -338,7 +338,7 @@ else
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (!obj_view_controller.mouse_drag and view_mouse_inside(view_game))
+            <string>if (!obj_view_controller.mouse_drag and view_mouse_inside(game_view))
 {
     with(obj_wall)
     {
@@ -370,7 +370,7 @@ else
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (!obj_view_controller.mouse_drag and view_mouse_inside(view_game))
+            <string>if (!obj_view_controller.mouse_drag and view_mouse_inside(game_view))
 {
     tower_create(floor(mouse_x/tile_size), floor(mouse_y/tile_size), 1, 0, 1);
 }

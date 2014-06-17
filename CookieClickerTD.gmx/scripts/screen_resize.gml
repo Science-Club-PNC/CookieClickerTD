@@ -13,33 +13,33 @@ var zoom = view_get_zoom();
 
 surface_resize(application_surface, max(window_width, 1), max(window_height, 1));
 
-view_xport[view_game] = 0;
-view_yport[view_game] = header_height;
-view_wport[view_game] = window_width - stats_width;
-view_hport[view_game] = window_height - header_height - footer_height;
+view_xport[game_view] = 0;
+view_yport[game_view] = header_height;
+view_wport[game_view] = window_width - stats_width;
+view_hport[game_view] = window_height - header_height - footer_height;
 
-view_xport[view_stats] = window_width - stats_width;
-view_yport[view_stats] = header_height;
-view_wport[view_stats] = stats_width;
-view_hport[view_stats] = window_height - header_height - footer_height;
+view_xport[stats_view] = window_width - stats_width;
+view_yport[stats_view] = header_height;
+view_wport[stats_view] = stats_width;
+view_hport[stats_view] = window_height - header_height - footer_height;
 
-view_xport[view_header] = 0;
-view_yport[view_header] = 0;
-view_wport[view_header] = window_width;
-view_hport[view_header] = header_height;
+view_xport[header_view] = 0;
+view_yport[header_view] = 0;
+view_wport[header_view] = window_width;
+view_hport[header_view] = header_height;
 
-view_xport[view_footer] = 0;
-view_yport[view_footer] = window_height - footer_height;
-view_wport[view_footer] = window_width;
-view_hport[view_footer] = footer_height;
+view_xport[footer_view] = 0;
+view_yport[footer_view] = window_height - footer_height;
+view_wport[footer_view] = window_width;
+view_hport[footer_view] = footer_height;
 
 view_set_zoom(zoom);
 
-view_wview[view_stats] = view_wport[view_stats];
-view_hview[view_stats] = view_hport[view_stats];
+view_wview[stats_view] = view_wport[stats_view];
+view_hview[stats_view] = view_hport[stats_view];
 
-view_wview[view_header] = view_wport[view_header];
-view_hview[view_header] = view_hport[view_header];
+view_wview[header_view] = view_wport[header_view];
+view_hview[header_view] = view_hport[header_view];
 
-view_wview[view_footer] = view_wport[view_footer];
-view_hview[view_footer] = view_hport[view_footer];
+view_wview[footer_view] = view_wport[footer_view];
+view_hview[footer_view] = view_hport[footer_view];
