@@ -18,9 +18,9 @@ view_yport[view_game] = header_height;
 view_wport[view_game] = window_width - stats_width;
 view_hport[view_game] = window_height - header_height - footer_height;
 
-view_xport[view_stats] = window_width - stats_width;
+view_xport[view_stats] = window_width - obj_stats_controller.stats_max_width;
 view_yport[view_stats] = header_height;
-view_wport[view_stats] = stats_width;
+view_wport[view_stats] = obj_stats_controller.stats_max_width;
 view_hport[view_stats] = window_height - header_height - footer_height;
 
 view_xport[view_header] = 0;
