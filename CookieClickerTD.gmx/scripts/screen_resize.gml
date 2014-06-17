@@ -11,7 +11,7 @@ var stats_width = 200;
 
 var zoom = view_get_zoom();
 
-surface_resize(application_surface, window_width, window_height);
+surface_resize(application_surface, max(window_width, 1), max(window_height, 1));
 
 view_xport[view_game] = 0;
 view_yport[view_game] = header_height;
