@@ -151,12 +151,12 @@ for (var cur_subwave = 0; cur_subwave < subwave_amount; cur_subwave++)
     //todo: determine some visual stats
     
     //todo: save stats in subwave map
-    subwave[?'subwave_type'] = subwave_type;
-    subwave[?'subwave_amount'] = subwave_amount;
+    subwave['subwave_type'] = subwave_type;
+    subwave['subwave_amount'] = subwave_amount;
     
-    subwave[?'enemy_hitpoints'] = enemy_hitpoints;
-    subwave[?'enemy_armor'] = enemy_armor;
-    subwave[?'enemy_speed'] = enemy_speed;
+    subwave['enemy_hitpoints'] = enemy_hitpoints;
+    subwave['enemy_armor'] = enemy_armor;
+    subwave['enemy_speed'] = enemy_speed;
     
     ds_list_add(subwaves, subwave);
 }

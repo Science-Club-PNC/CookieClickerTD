@@ -1,5 +1,4 @@
-///view_clamp()
-//clamps game view to prevent the player from moving and zooming the view outside the room
+///view_clamp
 
 var zoom_clamp = max(view_wview[game_view]/room_width, view_hview[game_view]/room_height);
 

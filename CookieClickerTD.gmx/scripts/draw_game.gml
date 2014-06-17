@@ -45,13 +45,13 @@ draw_background_tiled_ext(back_grid, 0, 0, tile_size/background_get_width(back_g
 //debug: draw enemy stats
 if view_mouse_inside(game_view)
 {
-    draw_set_colour(c_white);
+    draw_set_color(c_white);
     draw_set_valign(fa_bottom);
     draw_set_font(font_debug);
     
     with (obj_enemy)
     {
-        if point_in_circle(x, y, mouse_x, mouse_y, 60)
+        if (distance_to_point(mouse_x,mouse_y) < 60)
         {
             draw_text(x + 4, y + 4, 
                 "Hitpoints: " + string(hitpoints) + "/" + string(max_hitpoints) +
