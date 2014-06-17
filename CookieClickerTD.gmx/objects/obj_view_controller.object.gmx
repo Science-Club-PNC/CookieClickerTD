@@ -58,7 +58,7 @@ pause = false
           <argument>
             <kind>1</kind>
             <string>///mouse drag view
-if (mouse_drag and view_mouse_inside(game_view))
+if (mouse_drag and view_mouse_inside(view_game))
 {
     clamp_sides = view_move(mouse_last_x - mouse_x, mouse_last_y - mouse_y);
     
@@ -245,7 +245,7 @@ mouse_last_y = mouse_y;
             <kind>1</kind>
             <string>///enable mouse drag if control is pressed
 
-if (keyboard_check(vk_control) and view_mouse_inside(game_view))
+if (keyboard_check(vk_control) and view_mouse_inside(view_game))
 {
     mouse_drag = true;
     
