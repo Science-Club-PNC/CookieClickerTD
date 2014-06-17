@@ -7,7 +7,7 @@ var window_height = window_get_height();
 
 var header_height = 20;
 var footer_height = 20;
-var stats_width = 200;
+var stats_width = obj_stats_controller.stats_width;
 
 var zoom = view_get_zoom();
 

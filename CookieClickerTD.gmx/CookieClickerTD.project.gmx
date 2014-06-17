@@ -92,10 +92,12 @@
     </scripts>
     <scripts name="screen">
       <script>scripts\screen_resize.gml</script>
+      <script>scripts\screen_set_stats_width.gml</script>
+      <script>scripts\screen_set_buy_height.gml</script>
     </scripts>
     <scripts name="draw">
       <script>scripts\draw_game.gml</script>
-      <script>scripts\draw_menu.gml</script>
+      <script>scripts\draw_stats.gml</script>
       <script>scripts\draw_header.gml</script>
       <script>scripts\draw_footer.gml</script>
     </scripts>
@@ -120,6 +122,7 @@
     <objects name="controllers">
       <object>objects\obj_game_controller</object>
       <object>objects\obj_settings_controller</object>
+      <object>objects\obj_stats_controller</object>
       <object>objects\obj_screen_controller</object>
       <object>objects\obj_draw_controller</object>
       <object>objects\obj_pause_controller</object>
