@@ -19,6 +19,7 @@ tower_create(0, 8, 0, 1, 1);
 tower_create(0, 11, 0, 2, 1);</code>
   <enableViews>-1</enableViews>
   <clearViewBackground>0</clearViewBackground>
+  <clearDisplayBuffer>0</clearDisplayBuffer>
   <makerSettings>
     <isSet>0</isSet>
     <w>0</w>
