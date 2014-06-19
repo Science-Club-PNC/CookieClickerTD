@@ -179,26 +179,8 @@ if !surface_exists(background_surf)
     background_surf = surface_create(wview, hview);
     surface_set_target(background_surf);
     
-    {
-        var wback = background_get_width(back_menu_background);
-        var hback = background_get_height(back_menu_background);
-        
-        var xdraw = 0;
-        var ydraw = 0;
-        
-        do
-        {
-            do
-            {
-                draw_background_part(back_menu_background, 0, 0, wview - xdraw, hview - ydraw, xdraw, ydraw);
-                xdraw += wback;
-            }
-            until (xdraw &gt; wview)
-            ydraw += hback;
-            xdraw = 0;
-        }
-        until (ydraw &gt; hview)
-    }
+    draw_background_tiled(back_menu_background, 0, 0);
+    
     {
         var wback = background_get_width(back_menu_vborder);
         var hback = background_get_height(back_menu_vborder);

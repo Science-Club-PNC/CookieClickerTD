@@ -24,7 +24,7 @@ draw_set_colour(c_ltgray);
 draw_set_font(font_header);
 draw_set_valign(fa_bottom);
 
-draw_text(0, text_ground, "cookies: " + string(obj_money_controller.money));
-draw_text(150, text_ground, "zoom: " + string(round(obj_view_controller.zoom*10)*10) + "%");
+draw_text(2, text_ground, "cookies: " + string(obj_money_controller.money));
+draw_text(152, text_ground, "zoom: " + string(round(obj_view_controller.zoom*10)*10) + "%");
 
 draw_set_valign(fa_top);
