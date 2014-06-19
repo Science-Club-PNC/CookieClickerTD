@@ -43,3 +43,12 @@ view_hview[view_header] = view_hport[view_header];
 
 view_wview[view_footer] = view_wport[view_footer];
 view_hview[view_footer] = view_hport[view_footer];
+
+with (obj_stats_controller)
+{
+    if surface_exists(background_surf)
+    {
+        surface_free(background_surf);
+        background_surf = -1;
+    }
+}

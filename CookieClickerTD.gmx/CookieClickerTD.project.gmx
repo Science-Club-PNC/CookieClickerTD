@@ -56,6 +56,9 @@
   <backgrounds name="background">
     <background>background\back_grid</background>
     <background>background\back_grass</background>
+    <background>background\back_menu_background</background>
+    <background>background\back_menu_hborder</background>
+    <background>background\back_menu_vborder</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">

@@ -25,12 +25,12 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//init position variables
+            <string>///init position variables
 stats_width = 200;
 stats_max_width = 200;
 
 stats_anim_state = 1;
-stats_anim_speed = 0.01;
+stats_anim_speed = 0.04;
 
 buy_height = 0;
 buy_max_height = 100;
@@ -38,6 +38,28 @@ buy_max_height = 100;
 buy_open = true;
 buy_anim_state = 0;
 buy_anim_speed = 0.05;
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///init background surface
+background_surf = -1;
 </string>
           </argument>
         </arguments>
@@ -99,6 +121,102 @@ else
 }
 
 
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="5">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///free background surface
+if surface_exists(background_surf)
+{
+    surface_free(background_surf);
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="76">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///create background surface
+if !surface_exists(background_surf)
+{
+    var wview = view_wview[view_stats];
+    var hview = view_hview[view_stats];
+    
+    background_surf = surface_create(wview, hview);
+    surface_set_target(background_surf);
+    
+    {
+        var wback = background_get_width(back_menu_background);
+        var hback = background_get_height(back_menu_background);
+        
+        var xdraw = 0;
+        var ydraw = 0;
+        
+        do
+        {
+            do
+            {
+                draw_background_part(back_menu_background, 0, 0, wview - xdraw, hview - ydraw, xdraw, ydraw);
+                xdraw += wback;
+            }
+            until (xdraw &gt; wview)
+            ydraw += hback;
+            xdraw = 0;
+        }
+        until (ydraw &gt; hview)
+    }
+    {
+        var wback = background_get_width(back_menu_vborder);
+        var hback = background_get_height(back_menu_vborder);
+
+        var ydraw = 0;
+        
+        do
+        {
+            draw_background_part(back_menu_vborder, 0, 0, wview, hview - ydraw, 0, ydraw);
+
+            ydraw += hback;
+        }
+        until (ydraw &gt; hview)
+    }
+    
+    
+    surface_reset_target();
+}
 </string>
           </argument>
         </arguments>
