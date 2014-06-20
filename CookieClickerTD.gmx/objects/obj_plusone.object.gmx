@@ -25,11 +25,11 @@
         <arguments>
           <argument>
             <kind>0</kind>
-            <string>mouse_x</string>
+            <string>view_mouse_x()</string>
           </argument>
           <argument>
             <kind>0</kind>
-            <string>mouse_y</string>
+            <string>view_mouse_y()</string>
           </argument>
         </arguments>
       </action>
