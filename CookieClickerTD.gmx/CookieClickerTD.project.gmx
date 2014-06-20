@@ -52,6 +52,7 @@
     <sprite>sprites\spr_tower_turret</sprite>
     <sprite>sprites\spr_cursor_pointer</sprite>
     <sprite>sprites\spr_cursor_finger</sprite>
+    <sprite>sprites\money_adder</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\back_grid</background>
@@ -123,6 +124,7 @@
   </fonts>
   <objects name="objects">
     <object>objects\obj_spawner</object>
+    <object>objects\monet_added</object>
     <object>objects\obj_tower</object>
     <object>objects\obj_enemy</object>
     <object>objects\obj_wall</object>
