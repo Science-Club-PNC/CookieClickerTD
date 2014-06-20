@@ -60,6 +60,12 @@ with (obj_enemy)
         draw_self();
     }
 }
+with (obj_plusone)
+{
+    draw_set_alpha(alpha);
+    draw_sprite(spr_plusone, 0, x, y);
+    draw_set_alpha(1);
+}
 if (obj_stats_controller.buy_open)
 {
     draw_background_tiled_ext(back_grid, 0, 0, tile_size/background_get_width(back_grid),tile_size/background_get_height(back_grid), -1, 1);
