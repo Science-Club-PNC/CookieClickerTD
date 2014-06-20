@@ -55,7 +55,12 @@
   </sprites>
   <backgrounds name="background">
     <background>background\back_grid</background>
-    <background>background\back_grass</background>
+    <background>background\back_ground1</background>
+    <background>background\back_ground2</background>
+    <background>background\back_ground3</background>
+    <background>background\back_ground4</background>
+    <background>background\back_ground5</background>
+    <background>background\back_ground6</background>
     <background>background\back_menu_background</background>
     <background>background\back_menu_hborder</background>
     <background>background\back_menu_vborder</background>

@@ -2,8 +2,28 @@
 //draws the game in the current view
 
 //shader_set(sh_main);
-
-draw_background_tiled(back_grass, 0, 0);
+var background = obj_draw_controller.background;
+switch (background)
+{
+    case 1:
+    draw_background_tiled_ext(back_ground1, 0, 0, 0.5, 0.5, -1, 1);
+    break;
+    case 2:
+    draw_background_tiled_ext(back_ground2, 0, 0, 0.5, 0.5, -1, 1);
+    break;
+    case 3:
+    draw_background_tiled_ext(back_ground3, 0, 0, 0.5, 0.5, -1, 1);
+    break;
+    case 4:
+    draw_background_tiled_ext(back_ground4, 0, 0, 0.5, 0.5, -1, 1);
+    break;
+    case 5:
+    draw_background_tiled_ext(back_ground5, 0, 0, 1, 1, -1, 1);
+    break;
+    case 6:
+    draw_background_tiled_ext(back_ground6, 0, 0, 0.5, 0.5, -1, 1);
+    break;
+}
 
 if surface_exists(obj_draw_controller.corpse_surf)
 {
@@ -40,7 +60,10 @@ with (obj_enemy)
         draw_self();
     }
 }
-draw_background_tiled_ext(back_grid, 0, 0, tile_size/background_get_width(back_grid),tile_size/background_get_height(back_grid), -1, 1);
+if (obj_stats_controller.buy_open)
+{
+    draw_background_tiled_ext(back_grid, 0, 0, tile_size/background_get_width(back_grid),tile_size/background_get_height(back_grid), -1, 1);
+}
 
 //debug: draw enemy stats
 if view_mouse_inside(view_game)
