@@ -372,7 +372,7 @@ else
             <kind>1</kind>
             <string>if (!obj_view_controller.mouse_drag and view_mouse_inside(view_game))
 {
-    tower_create(floor(mouse_x/tile_size), floor(mouse_y/tile_size), 1, 0, 1);
+    tower_create(floor(window_view_mouse_get_x(view_game)/tile_size), floor(window_view_mouse_get_y(view_game)/tile_size), 1, 0, 1);
 }
 </string>
           </argument>
