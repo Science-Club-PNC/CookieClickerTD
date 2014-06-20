@@ -60,15 +60,15 @@ pause = false
             <string>///mouse drag view
 if (mouse_drag and view_mouse_inside(view_game))
 {
-    clamp_sides = view_move(mouse_last_x - mouse_x, mouse_last_y - mouse_y);
+    clamp_sides = view_move(mouse_last_x - view_mouse_x(), mouse_last_y - view_mouse_y());
     
     if (clamp_sides == 1 or clamp_sides == 3)
     {
-        mouse_last_x = mouse_x;
+        mouse_last_x = view_mouse_x();
     }
     if (clamp_sides == 2 or clamp_sides == 3)
     {
-        mouse_last_y = mouse_y;
+        mouse_last_y = view_mouse_y();
     }
 }
 </string>
@@ -219,8 +219,8 @@ if !mouse_check_button(mb_middle)
 
 mouse_drag = true;
     
-mouse_last_x = mouse_x;
-mouse_last_y = mouse_y;
+mouse_last_x = view_mouse_x();
+mouse_last_y = view_mouse_y();
 </string>
           </argument>
         </arguments>
@@ -249,8 +249,8 @@ if (keyboard_check(vk_control) and view_mouse_inside(view_game))
 {
     mouse_drag = true;
     
-    mouse_last_x = mouse_x;
-    mouse_last_y = mouse_y;
+    mouse_last_x = view_mouse_x();
+    mouse_last_y = view_mouse_y();
 }
 </string>
           </argument>

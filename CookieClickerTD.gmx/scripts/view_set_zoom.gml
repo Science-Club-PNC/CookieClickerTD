@@ -7,10 +7,10 @@ var zoom_factor = zoom/view_get_zoom();
 var zoom_x, zoom_y, dif_x, dif_y;
 if view_mouse_inside(view_game)
 {
-    zoom_x = mouse_x;
-    zoom_y = mouse_y;
-    dif_x = mouse_x - view_xview[view_game];
-    dif_y = mouse_y - view_yview[view_game];
+    zoom_x = view_mouse_x();
+    zoom_y = view_mouse_y();
+    dif_x = view_mouse_x() - view_xview[view_game];
+    dif_y = view_mouse_y() - view_yview[view_game];
 }
 else
 {
