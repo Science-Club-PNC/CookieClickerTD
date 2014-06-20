@@ -137,7 +137,7 @@ image_yscale = 4*tile_size/sprite_height;
         <arguments>
           <argument>
             <kind>10</kind>
-            <object>monet_added</object>
+            <object>money_added</object>
           </argument>
           <argument>
             <kind>0</kind>

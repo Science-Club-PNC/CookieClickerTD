@@ -124,7 +124,7 @@
   </fonts>
   <objects name="objects">
     <object>objects\obj_spawner</object>
-    <object>objects\monet_added</object>
+    <object>objects\money_added</object>
     <object>objects\obj_tower</object>
     <object>objects\obj_enemy</object>
     <object>objects\obj_wall</object>
