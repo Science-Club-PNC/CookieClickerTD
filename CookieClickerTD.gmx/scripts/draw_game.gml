@@ -80,7 +80,7 @@ if view_mouse_inside(view_game)
     
     with (obj_enemy)
     {
-        if point_in_circle(x, y, mouse_x, mouse_y, 60)
+        if point_in_circle(x, y, view_mouse_x(), view_mouse_y(), 60)
         {
             draw_text(x + 4, y + 4, 
                 "Hitpoints: " + string(hitpoints) + "/" + string(max_hitpoints) +
