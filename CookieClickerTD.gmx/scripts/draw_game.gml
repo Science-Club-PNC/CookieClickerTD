@@ -66,9 +66,13 @@ if (obj_stats_controller.buy_open)
 }
 with (obj_plusone)
 {
-    draw_set_alpha(alpha);
-    draw_self();
-    draw_set_alpha(1);
+    if (!(alpha <= 0)) {
+        draw_set_alpha(alpha);
+        draw_sprite(spr_plusone, 0, x, y);
+        draw_set_alpha(1);
+    } else {
+        instance_destroy();
+    }
 }
 
 //debug: draw enemy stats
