@@ -29,7 +29,7 @@
 {
     with (instance_find(obj_spawner, irandom(instance_number(obj_spawner) - 1)))
     {
-        enemy_create(x + tile_size/2, y + tile_size/2, 0, 1); 
+        enemy_create(x + tile_size/2, y + tile_size/2, false); 
     }
 }
 </string>

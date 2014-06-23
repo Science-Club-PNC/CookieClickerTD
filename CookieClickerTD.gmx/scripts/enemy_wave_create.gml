@@ -4,7 +4,7 @@
 var wave_num = argument0;
 var wave_power = 100*wave_num^1.2;
 
-//reminder: subwaves isn't freed anywhere in this script. should be freed in enemy_wave_destroy
+//reminder: subwaves aren't freed anywhere in this script. they should be freed in enemy_wave_destroy
 var subwaves = ds_list_create();
 var subwave_amount = round(sqrt(wave_num)*random_range(0.8, 1.2));
 

@@ -46,7 +46,7 @@ enemy_level = 1;
 
 //max_hitpoints
 //amount of hitpoints when fully healed
-max_hitpoints = 100;
+max_hitpoints = 30;
 hitpoints = 30;
 
 //armor_level
@@ -92,61 +92,22 @@ is_flying = false;
 sprite_index = choose(spr_cursor_pointer, spr_cursor_finger);
 
 var scale;
+
 if (irandom(6) == 0)
 {
-scale = random_range(0.2,0.3)
-image_blend = make_colour_hsv(irandom(255),irandom_range(200,255),255);
+    scale = random_range(0.2,0.3)
+    image_blend = make_colour_hsv(irandom(255),irandom_range(200,255),255);
 }
 else
 {
-scale = random_range(0.1,0.2)
-image_blend = c_white;
+    scale = random_range(0.1,0.2)
+    image_blend = c_white;
 }
 
 image_xscale = scale;
 image_yscale = scale;
 
 </string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>601</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_execute_script</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>9</kind>
-            <script>enemy_find_path</script>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string></string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string></string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string></string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string></string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string></string>
           </argument>
         </arguments>
       </action>

@@ -77,6 +77,7 @@
       <script>scripts\enemy_damage.gml</script>
       <scripts name="wave">
         <script>scripts\enemy_wave_create.gml</script>
+        <script>scripts\enemy_wave_destroy.gml</script>
       </scripts>
     </scripts>
     <scripts name="tower">
@@ -141,7 +142,7 @@
       <object>objects\obj_pause_controller</object>
       <object>objects\obj_view_controller</object>
       <object>objects\obj_pathfinding_controller</object>
-      <object>objects\obj_spawn_controller</object>
+      <object>objects\obj_spawning_controller</object>
       <object>objects\obj_money_controller</object>
       <object>objects\obj_selection_controller</object>
     </objects>
