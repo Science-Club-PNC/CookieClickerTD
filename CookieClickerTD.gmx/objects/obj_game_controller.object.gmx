@@ -372,7 +372,11 @@ else
             <kind>1</kind>
             <string>if (!obj_view_controller.mouse_drag and view_mouse_inside(view_game))
 {
-    tower_create(floor(view_mouse_x()/tile_size), floor(view_mouse_y()/tile_size), 1, 0, 1);
+    if (money_checker(30,true))
+    {
+        tower_create(floor(view_mouse_x()/tile_size), floor(view_mouse_y()/tile_size), 1, 0, 1);
+        obj_money_controller.money -= 30
+    }
 }
 </string>
           </argument>
