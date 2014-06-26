@@ -57,32 +57,6 @@ image_yscale = 4*tile_size/sprite_height;
         </arguments>
       </action>
     </event>
-    <event eventtype="2" enumb="1">
-      <action>
-        <libid>1</libid>
-        <id>611</id>
-        <kind>6</kind>
-        <userelative>-1</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>clicked</string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>false</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
     <event eventtype="2" enumb="0">
       <action>
         <libid>1</libid>
@@ -120,25 +94,25 @@ image_yscale = 4*tile_size/sprite_height;
     <event eventtype="6" enumb="7">
       <action>
         <libid>1</libid>
-        <id>301</id>
-        <kind>0</kind>
+        <id>611</id>
+        <kind>6</kind>
         <userelative>-1</userelative>
         <isquestion>0</isquestion>
         <useapplyto>-1</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_set_alarm</functionname>
+        <exetype>2</exetype>
+        <functionname></functionname>
         <codestring></codestring>
         <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
           <argument>
-            <kind>0</kind>
-            <string>0.05</string>
+            <kind>1</kind>
+            <string>clicked</string>
           </argument>
           <argument>
-            <kind>4</kind>
-            <string>1</string>
+            <kind>0</kind>
+            <string>false</string>
           </argument>
         </arguments>
       </action>
