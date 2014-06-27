@@ -120,6 +120,9 @@
     <scripts name="control">
       <script>scripts\money_checker.gml</script>
     </scripts>
+    <scripts name="menu">
+      <script>scripts\menu_object_mouse_hover.gml</script>
+    </scripts>
   </scripts>
   <fonts name="fonts">
     <font>fonts\font_debug</font>
