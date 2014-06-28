@@ -130,6 +130,8 @@ image_yscale = scale;
           <argument>
             <kind>1</kind>
             <string>//draw corpse to corpse surface
+show_debug_message("died with hitpoints: " + string(hitpoints) + "/" + string(max_hitpoints));
+
 if surface_exists(obj_draw_controller.corpse_surf)
 {
     surface_set_target(obj_draw_controller.corpse_surf);

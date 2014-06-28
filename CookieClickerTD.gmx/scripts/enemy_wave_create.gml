@@ -16,6 +16,13 @@ type_chances[2] = 2; //heavy
 type_chances[3] = 1.5; //flying
 type_chances[4] = 0.2; //boss
 
+//debug: show wave data
+show_debug_message("{");
+show_debug_message("-- created wave");
+show_debug_message("wave_num = " + string(wave_num));
+show_debug_message("wave_power = " + string(wave_power));
+show_debug_message("subwave_amount = " + string(subwave_amount));
+
 for (var cur_subwave = 0; cur_subwave < subwave_amount; cur_subwave++)
 {
     //init subwave map
@@ -38,7 +45,7 @@ for (var cur_subwave = 0; cur_subwave < subwave_amount; cur_subwave++)
     }
     
     //choose subwave enemy type
-    var subwave_type;
+    var enemy_type;
     {
         //get the total of type chances
         var type_chances_total = 0;
@@ -56,38 +63,38 @@ for (var cur_subwave = 0; cur_subwave < subwave_amount; cur_subwave++)
             type_choice_num -= type_chances[i];
             if (type_choice_num < 0)
             {
-                subwave_type = i;
+                enemy_type = i;
                 break;
             }
         }
         
         //make the chosen enemy type less likely to be picked in futher subwaves inside this wave
-        type_chances[subwave_type] /= 2;
+        type_chances[enemy_type] /= 2;
     }
 
     //choose subwave enemy amount
-    var subwave_amount
+    var enemy_amount
     
-    switch (subwave_type)
+    switch (enemy_type)
     {
         case 0: //normal
-        subwave_amount = round(15*random_range(0.5, 1.5));
+        enemy_amount = round(15*random_range(0.5, 1.5));
         break;
         
         case 1: //swarm
-        subwave_amount = round(35*random_range(0.5, 1.5));
+        enemy_amount = round(35*random_range(0.5, 1.5));
         break;
         
         case 2: //heavy
-        subwave_amount = round(6*random_range(0.5, 1.5));
+        enemy_amount = round(6*random_range(0.5, 1.5));
         break;
         
         case 3: //flying
-        subwave_amount = round(10*random_range(0.5, 1.5));
+        enemy_amount = round(10*random_range(0.5, 1.5));
         break;
         
         case 4: //boss
-        subwave_amount = 1;
+        enemy_amount = 1;
         break;
     }
 
@@ -95,14 +102,14 @@ for (var cur_subwave = 0; cur_subwave < subwave_amount; cur_subwave++)
     
     //calc enemy power
     //todo: add special power multiplier
-    var enemy_power = subwave_power/subwave_amount;
+    var enemy_power = subwave_power/enemy_amount;
     
     //determine enemy stats
     //todo: balance stats
     var enemy_hitpoints, enemy_armor, enemy_speed;
     {
         //divide enemy power to enemy stats
-        switch (subwave_type)
+        switch (enemy_type)
         {
             case 0: //normal
             enemy_hitpoints = random_range(2,3);
@@ -151,15 +158,28 @@ for (var cur_subwave = 0; cur_subwave < subwave_amount; cur_subwave++)
     //todo: determine some visual stats
     
     //save stats in subwave map
-    subwave[?'subwave_type'] = subwave_type;
-    subwave[?'subwave_amount'] = subwave_amount;
+    subwave[?'enemy_type'] = enemy_type;
+    subwave[?'enemy_amount'] = enemy_amount;
     
     subwave[?'enemy_hitpoints'] = enemy_hitpoints;
     subwave[?'enemy_armor'] = enemy_armor;
     subwave[?'enemy_speed'] = enemy_speed;
     
     ds_list_add(subwaves, subwave);
+    
+    //debug: show subwave data
+    show_debug_message("");
+    show_debug_message("-- created subwave");
+    show_debug_message("cur_subwave = " + string(cur_subwave));
+    show_debug_message("subwave_power = " + string(subwave_power));
+    show_debug_message("enemy_type = " + string(enemy_type));
+    show_debug_message("enemy_amount = " + string(enemy_amount));
+    show_debug_message("enemy_hitpoints = " + string(enemy_hitpoints));
+    show_debug_message("enemy_armor = " + string(enemy_armor));
+    show_debug_message("enemy_speed = " + string(enemy_speed));
 }
+
+show_debug_message("}");
 
 return subwaves;
 

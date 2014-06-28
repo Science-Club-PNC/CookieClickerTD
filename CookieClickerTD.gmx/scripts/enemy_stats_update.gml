@@ -4,7 +4,7 @@
 var subwave = argument0
 
 //todo: add type/level stats loading
-enemy_type = subwave[?'subwave_type'];
+enemy_type = subwave[?'enemy_type'];
     
 max_hitpoints = subwave[?'enemy_hitpoints'];
 armor_level = subwave[?'enemy_armor'];

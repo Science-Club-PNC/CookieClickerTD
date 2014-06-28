@@ -141,7 +141,7 @@ else
         for (var i=0; i&lt;ds_list_size(subwaves); i++)
         {
             var subwave = subwaves[| i];
-            subwave_numbers[i] = subwave[?'enemy_speed'];
+            subwave_numbers[i] = subwave[?'enemy_amount'];
             subwave_timers[i] = 0;
         }
     }
