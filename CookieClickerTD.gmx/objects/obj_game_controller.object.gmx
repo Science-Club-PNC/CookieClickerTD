@@ -122,7 +122,7 @@ else
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (!obj_view_controller.mouse_drag and view_mouse_inside(view_game) &amp;&amp; check_obj_king_cookie())
+            <string>if (!obj_view_controller.mouse_drag and view_mouse_inside(view_game) /*&amp;&amp; check_obj_king_cookie()*/)
 {
     if (money_checker(30,true))
     {
