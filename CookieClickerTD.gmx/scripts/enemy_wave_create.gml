@@ -2,7 +2,7 @@
 //creates a randomized wave and returns it
 
 var wave_num = argument0;
-var wave_power = 100*wave_num^1.2;
+var wave_power = 20*power(1.1,wave_num);
 
 //reminder: subwaves aren't freed anywhere in this script. they should be freed in enemy_wave_destroy
 var subwaves = ds_list_create();
@@ -150,10 +150,13 @@ for (var cur_subwave = 0; cur_subwave < subwave_amount; cur_subwave++)
         enemy_speed /= enemy_division_total;
         
         //set to actual stats
-        enemy_hitpoints = round(10*enemy_hitpoints*enemy_power);
+        enemy_hitpoints = max(1,round(10*enemy_hitpoints*enemy_power));
         enemy_armor = round(0.1*enemy_armor*enemy_power);
         enemy_speed = 2*enemy_speed;
     }
+    
+    //todo: create subwave spawning speed calculation
+    var subwave_speed = 0.05;
     
     //todo: determine some visual stats
     
@@ -164,6 +167,8 @@ for (var cur_subwave = 0; cur_subwave < subwave_amount; cur_subwave++)
     subwave[?'enemy_hitpoints'] = enemy_hitpoints;
     subwave[?'enemy_armor'] = enemy_armor;
     subwave[?'enemy_speed'] = enemy_speed;
+    
+    subwave[?'subwave_speed'] = subwave_speed;
     
     ds_list_add(subwaves, subwave);
     

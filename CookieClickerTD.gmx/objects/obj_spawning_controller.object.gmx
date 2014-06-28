@@ -96,22 +96,40 @@ if (irandom(30) == 31)
 {
     var wave_done = true;
     
+    //loop through subwaves
     for (var i=0; i&lt;ds_list_size(subwaves); i++)
     {
+        //check if there are enemies left to spawn in this subwave
         if (subwave_numbers[i] &gt; 0)
         {
+            //get subwave
             var subwave = subwaves[| i];
-            subwave_numbers[i]--;
             
+            //mark spawning isn't done yet
             wave_done = false;
-            
-            with (instance_find(obj_spawner, irandom(instance_number(obj_spawner) - 1)))
+
+            //cooldown and loop through spawns this step
+            for (subwave_timers[i] += subwave[?'subwave_speed']; subwave_timers[i] &gt; 1; subwave_timers[i]--)
             {
-                enemy_create(x + tile_size/2, y + tile_size/2, subwave);
+                //decrease spawnable enemies in subwave
+                subwave_numbers[i]--;
+                
+                //find a spawner and spawn enemy there
+                with (instance_find(obj_spawner, irandom(instance_number(obj_spawner) - 1)))
+                {
+                    enemy_create(x + tile_size/2, y + tile_size/2, subwave);
+                }
+                
+                //check if there are enemies left to spawn in this subwave
+                if (subwave_numbers[i] &lt;= 0)
+                {
+                    break;
+                }
             }
         }
     }
     
+    //end wave if there are no enemies left to spawn in this wave
     if (wave_done)    
     {
         spawning = false;
