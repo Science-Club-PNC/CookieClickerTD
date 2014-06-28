@@ -121,19 +121,15 @@
       <script>scripts\money_checker.gml</script>
       <script>scripts\check_obj_king_cookie.gml</script>
     </scripts>
+    <scripts name="menu">
+      <script>scripts\menu_object_mouse_hover.gml</script>
+    </scripts>
   </scripts>
   <fonts name="fonts">
     <font>fonts\font_debug</font>
     <font>fonts\font_header</font>
   </fonts>
   <objects name="objects">
-    <object>objects\obj_spawner</object>
-    <object>objects\obj_plusone</object>
-    <object>objects\obj_tower</object>
-    <object>objects\obj_enemy</object>
-    <object>objects\obj_wall</object>
-    <object>objects\obj_king_cookie</object>
-    <object>objects\obj_bullet</object>
     <objects name="controllers">
       <object>objects\obj_game_controller</object>
       <object>objects\obj_settings_controller</object>
@@ -146,6 +142,19 @@
       <object>objects\obj_spawning_controller</object>
       <object>objects\obj_money_controller</object>
       <object>objects\obj_selection_controller</object>
+    </objects>
+    <objects name="game">
+      <object>objects\obj_bullet</object>
+      <object>objects\obj_king_cookie</object>
+      <object>objects\obj_wall</object>
+      <object>objects\obj_enemy</object>
+      <object>objects\obj_tower</object>
+      <object>objects\obj_plusone</object>
+      <object>objects\obj_spawner</object>
+    </objects>
+    <objects name="menu">
+      <object>objects\obj_menu_object</object>
+      <object>objects\obj_button</object>
     </objects>
   </objects>
   <rooms name="rooms">
