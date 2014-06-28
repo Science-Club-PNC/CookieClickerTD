@@ -13,7 +13,7 @@ var type_chances;
 type_chances[0] = 4; //normal
 type_chances[1] = 2; //swarm
 type_chances[2] = 2; //heavy
-type_chances[3] = 1.5; //flying
+type_chances[3] = 0; //flying //note: disabled until placing AA turrets is possible
 type_chances[4] = 0.2; //boss
 
 //debug: show wave data

@@ -117,10 +117,6 @@
     <scripts name="utils">
       <script>scripts\string_split.gml</script>
     </scripts>
-    <scripts name="control">
-      <script>scripts\money_checker.gml</script>
-      <script>scripts\check_obj_king_cookie.gml</script>
-    </scripts>
     <scripts name="menu">
       <script>scripts\menu_object_mouse_hover.gml</script>
     </scripts>

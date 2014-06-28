@@ -17,5 +17,5 @@ with(instance_create(argument0, argument1, obj_enemy))
     enemy_find_path();
     
     //return the new instance
-    return self
+    return id;
 }

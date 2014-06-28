@@ -122,12 +122,15 @@ else
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (!obj_view_controller.mouse_drag and view_mouse_inside(view_game) /*&amp;&amp; check_obj_king_cookie()*/)
+            <string>if (!obj_view_controller.mouse_drag and view_mouse_inside(view_game))
 {
-    if (money_checker(30,true))
+    var price = 30
+    if (obj_money_controller.money &gt;= price)
     {
-        tower_create(floor(view_mouse_x()/tile_size), floor(view_mouse_y()/tile_size), 1, 0, 1);
-        obj_money_controller.money -= 30;
+        if (tower_create(floor(view_mouse_x()/tile_size), floor(view_mouse_y()/tile_size), 1, 0, 1) != noone)
+        {
+            obj_money_controller.money -= price;
+        }
     }
 }
 </string>

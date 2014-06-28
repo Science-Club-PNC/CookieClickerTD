@@ -30,7 +30,7 @@ if (wall_grid_can_place(argument0, argument1, argument4))
         tower_stats_update();
         
         //return the new instance
-        return self
+        return id;
     }
 }
 
