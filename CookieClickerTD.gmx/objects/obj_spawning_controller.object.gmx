@@ -2,12 +2,51 @@
 <object>
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
-  <visible>0</visible>
+  <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
+    <event eventtype="0" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>//time in steps since last wave end
+timer = 200;
+
+//current wave number
+wave_num = 0;
+
+//current wave
+subwaves = 0;
+
+//is currently spawning
+spawning = false
+
+//array of amount of spawned enemies per subwave
+subwave_numbers = 0;
+
+//array of cooldown of spawning enemies in subwave
+subwave_timers = 0;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
@@ -25,13 +64,116 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (irandom(30) == 0)
+            <string>///debug: random waveless spawning
+if (irandom(30) == 31)
 {
     with (instance_find(obj_spawner, irandom(instance_number(obj_spawner) - 1)))
     {
         enemy_create(x + tile_size/2, y + tile_size/2, false); 
     }
 }
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (spawning)
+{
+    var wave_done = true;
+    
+    for (var i=0; i&lt;ds_list_size(subwaves); i++)
+    {
+        if (subwave_numbers[i] &gt; 0)
+        {
+            var subwave = subwaves[| i];
+            subwave_numbers[i]--;
+            
+            wave_done = false;
+            
+            with (instance_find(obj_spawner, irandom(instance_number(obj_spawner) - 1)))
+            {
+                enemy_create(x + tile_size/2, y + tile_size/2, subwave);
+            }
+        }
+    }
+    
+    if (wave_done)    
+    {
+        spawning = false;
+        enemy_wave_destroy(subwaves);
+    }
+}
+else
+{
+    //increase time since last wave
+    timer++;
+    
+    //start new wave if timer is done
+    if (timer &gt; 400)
+    {
+        //reset timer
+        timer = 0;
+        
+        //get new wave
+        wave_num++;
+        subwaves = enemy_wave_create(wave_num);
+        
+        //init spawning
+        spawning = true;
+        subwave_numbers = 0;
+        subwave_timers = 0;
+        
+        for (var i=0; i&lt;ds_list_size(subwaves); i++)
+        {
+            var subwave = subwaves[| i];
+            subwave_numbers[i] = subwave[?'enemy_speed'];
+            subwave_timers[i] = 0;
+        }
+    }
+}
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="64">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///debug: draw spawning stats
+draw_set_font(font_debug);
+draw_set_colour(c_white);
+draw_text(0,20,"timer: " + string(timer) + 
+    "#wave_num: " + string(wave_num));
 </string>
           </argument>
         </arguments>

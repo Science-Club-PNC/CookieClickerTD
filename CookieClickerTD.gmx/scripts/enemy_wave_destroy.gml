@@ -9,9 +9,9 @@ if ds_exists(wave, ds_type_list)
     
     for (var i = 0; i < size; i++)
     {
-        if ds_exists(wave[! i], ds_type_map)
+        if ds_exists(wave[| i], ds_type_map)
         {
-            ds_map_destroy(wave[! i]);
+            ds_map_destroy(wave[| i]);
         }
     }
     

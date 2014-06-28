@@ -4,16 +4,16 @@
 var subwave = argument0
 
 //todo: add type/level stats loading
-    enemy_type = subwave[?'subwave_type'];
+enemy_type = subwave[?'subwave_type'];
     
-    max_hitpoints = subwave[?'enemy_hitpoints'];
-    armor_level = subwave[?'enemy_armor'];
-    movement_speed = subwave[?'enemy_speed'];
-    
-    if (enemy_type == 3)
-    {
-        is_flying = true
-    }
+max_hitpoints = subwave[?'enemy_hitpoints'];
+armor_level = subwave[?'enemy_armor'];
+movement_speed = subwave[?'enemy_speed'];
+
+if (enemy_type == 3)
+{
+    is_flying = true
+}
 
 //todo: add type sprite loading
 

@@ -27,7 +27,7 @@ for (var cur_subwave = 0; cur_subwave < subwave_amount; cur_subwave++)
     if (cur_subwave + 1 < subwave_amount)
     {
         //take a somewhat random peice of the wave power
-        subwave_power = wave_power/(subwaves - cur_subwave)*random_range(0.8, 1.2);
+        subwave_power = wave_power/(subwave_amount - cur_subwave)*random_range(0.8, 1.2);
         wave_power -= subwave_power;
     }
     else
@@ -150,7 +150,7 @@ for (var cur_subwave = 0; cur_subwave < subwave_amount; cur_subwave++)
     
     //todo: determine some visual stats
     
-    //todo: save stats in subwave map
+    //save stats in subwave map
     subwave[?'subwave_type'] = subwave_type;
     subwave[?'subwave_amount'] = subwave_amount;
     
