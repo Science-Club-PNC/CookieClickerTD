@@ -116,6 +116,7 @@
     </scripts>
     <scripts name="utils">
       <script>scripts\string_split.gml</script>
+      <script>scripts\rectangle_check_point.gml</script>
     </scripts>
     <scripts name="menu">
       <script>scripts\menu_object_mouse_hover.gml</script>
