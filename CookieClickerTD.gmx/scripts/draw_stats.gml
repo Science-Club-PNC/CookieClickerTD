@@ -29,6 +29,26 @@ with(obj_stats_controller)
         draw_set_font(font_debug);
         draw_set_colour(c_white);
         draw_text(buy_left + 18, buy_top + 2, "Shop");
+        
+        //draw buy buttons
+        for (xpos = 0; xpos < 3; xpos++)
+        {
+            for (ypos = 0; ypos < 2; ypos++)
+            {
+                with (buy_buttons[xpos,ypos])
+                {
+                    if menu_object_mouse_hover(id)
+                    {
+                        draw_set_colour(c_black);
+                    }
+                    else
+                    {
+                        draw_set_colour(c_white);
+                    }
+                    draw_rectangle(x, y, x + width, y + height, false);
+                }
+            }
+        }
     }
     
     //draw stats menu
