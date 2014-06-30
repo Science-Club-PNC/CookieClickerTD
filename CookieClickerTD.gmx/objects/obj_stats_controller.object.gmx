@@ -26,19 +26,18 @@
           <argument>
             <kind>1</kind>
             <string>///init position variables
-stats_width = 200;
+stats_width = 0;
 stats_max_width = 200;
 
-stats_anim_state = 1;
+stats_anim_state = 0;
 stats_anim_speed = 0.04;
 
 buy_height = 0;
 buy_max_height = 100;
 
-buy_open = true;
+buy_open = false;
 buy_anim_state = 0;
 buy_anim_speed = 0.05;
-
 </string>
           </argument>
         </arguments>
@@ -247,54 +246,6 @@ if !surface_exists(background_surf)
     
     surface_reset_target();
 }
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="9" enumb="86">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///debug: open/close stats screen
-obj_selection_controller.selection_type = !obj_selection_controller.selection_type
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="9" enumb="66">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///open/close buy screen
-buy_open = !buy_open
 </string>
           </argument>
         </arguments>
