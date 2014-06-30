@@ -83,13 +83,17 @@
       <script>scripts\tower_get_target.gml</script>
       <script>scripts\tower_shoot.gml</script>
     </scripts>
-    <scripts name="block_grid">
-      <script>scripts\block_grid_init.gml</script>
-      <script>scripts\block_grid_add.gml</script>
-      <script>scripts\block_grid_add_area.gml</script>
-      <script>scripts\block_grid_remove.gml</script>
-      <script>scripts\block_grid_remove_area.gml</script>
-      <script>scripts\block_grid_can_place.gml</script>
+    <scripts name="block">
+      <script>scripts\block_can_place.gml</script>
+      <script>scripts\block_update_sprite.gml</script>
+      <script>scripts\block_update_neighbors.gml</script>
+      <scripts name="grid">
+        <script>scripts\block_grid_init.gml</script>
+        <script>scripts\block_grid_add.gml</script>
+        <script>scripts\block_grid_add_area.gml</script>
+        <script>scripts\block_grid_remove.gml</script>
+        <script>scripts\block_grid_remove_area.gml</script>
+      </scripts>
     </scripts>
     <scripts name="view">
       <script>scripts\view_move.gml</script>

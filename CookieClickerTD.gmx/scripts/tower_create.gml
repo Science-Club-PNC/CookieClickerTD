@@ -5,7 +5,7 @@ var abs_x = argument0*tile_size;
 var abs_y = argument1*tile_size;
 
 //check if player may place a tower here
-if (block_grid_can_place(argument0, argument1, argument4))
+if (block_can_place(argument0, argument1, argument4))
 {
     //create tower instance and target it
     with (instance_create(abs_x, abs_y, obj_tower))
@@ -29,6 +29,9 @@ if (block_grid_can_place(argument0, argument1, argument4))
         //assign other stats
         tower_stats_update();
         
+        //update neighbor sprites
+        block_update_neighbors();
+
         //return the new instance
         return id;
     }

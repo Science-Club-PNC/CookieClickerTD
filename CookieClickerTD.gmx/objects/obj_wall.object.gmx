@@ -37,6 +37,8 @@ image_yscale = tile_size/sprite_height;
 //init seams
 seam_top = 0;
 seam_bottom = 0;
+
+block_update_sprite(id);
 </string>
           </argument>
         </arguments>
