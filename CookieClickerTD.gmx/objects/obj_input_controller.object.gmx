@@ -144,7 +144,7 @@
           <argument>
             <kind>1</kind>
             <string>///debug: open/close stats screen
-with (obj_stats_controller)
+with (obj_selection_controller)
 {
     selection_type = !selection_type;
 }
