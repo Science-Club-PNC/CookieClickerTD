@@ -15,12 +15,14 @@ if (object_index != obj_tower)
         case obj_wall:
 
         //set horizontal seam
-        image_index = found_left + 2*found_right;
+        image_index = 4*((y div tile_size) mod 2) + found_left + 2*found_right;
+        show_debug_message(string(y) + " | " + string(y div tile_size) + " | " + string((y div tile_size) mod 2));
         
         //set top (diagonal) seam
         if (found_top)
         {
             seam_top = (found_left and position_meeting(x - tile_size, y - tile_size, obj_block)) + 2*(found_right and position_meeting(x + tile_size, y - tile_size, obj_block));
+            
         }
         else
         {
