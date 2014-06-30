@@ -83,13 +83,13 @@
       <script>scripts\tower_get_target.gml</script>
       <script>scripts\tower_shoot.gml</script>
     </scripts>
-    <scripts name="wall_grid">
-      <script>scripts\wall_grid_init.gml</script>
-      <script>scripts\wall_grid_add.gml</script>
-      <script>scripts\wall_grid_add_area.gml</script>
-      <script>scripts\wall_grid_remove.gml</script>
-      <script>scripts\wall_grid_remove_area.gml</script>
-      <script>scripts\wall_grid_can_place.gml</script>
+    <scripts name="block_grid">
+      <script>scripts\block_grid_init.gml</script>
+      <script>scripts\block_grid_add.gml</script>
+      <script>scripts\block_grid_add_area.gml</script>
+      <script>scripts\block_grid_remove.gml</script>
+      <script>scripts\block_grid_remove_area.gml</script>
+      <script>scripts\block_grid_can_place.gml</script>
     </scripts>
     <scripts name="view">
       <script>scripts\view_move.gml</script>
@@ -141,11 +141,12 @@
     <objects name="game">
       <object>objects\obj_bullet</object>
       <object>objects\obj_king_cookie</object>
-      <object>objects\obj_wall</object>
+      <object>objects\obj_block</object>
       <object>objects\obj_enemy</object>
       <object>objects\obj_tower</object>
       <object>objects\obj_plusone</object>
       <object>objects\obj_spawner</object>
+      <object>objects\obj_wall</object>
     </objects>
     <objects name="menu">
       <object>objects\obj_menu_object</object>

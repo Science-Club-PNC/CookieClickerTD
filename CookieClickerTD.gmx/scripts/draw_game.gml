@@ -22,10 +22,19 @@ with (obj_enemy)
 }
 with (obj_wall)
 {
+    if (seam_top >= 0)
+    {
+        draw_sprite_ext(spr_wall_seam, seam_top, x, y, image_xscale, image_yscale, 0, image_blend, image_alpha);
+    }
+    if (seam_bottom >= 0)
+    {
+        draw_sprite_ext(spr_wall_seam, seam_bottom, x, y + sprite_height - sprite_get_height(spr_wall_seam)*image_yscale, image_xscale, image_yscale, 0, image_blend, image_alpha);
+    }
     draw_self();
 }
 with (obj_tower)
 {
+    draw_self();
     draw_sprite_ext(spr_tower_turret, 0, center_x, center_y, 1, 1, target_angle, c_white, 1);
 }
 with (obj_bullet)

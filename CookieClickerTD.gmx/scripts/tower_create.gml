@@ -5,7 +5,7 @@ var abs_x = argument0*tile_size;
 var abs_y = argument1*tile_size;
 
 //check if player may place a tower here
-if (wall_grid_can_place(argument0, argument1, argument4))
+if (block_grid_can_place(argument0, argument1, argument4))
 {
     //create tower instance and target it
     with (instance_create(abs_x, abs_y, obj_tower))
@@ -24,7 +24,7 @@ if (wall_grid_can_place(argument0, argument1, argument4))
         center_y = y + tower_size*tile_size/2
         
         //add the tower to the wall grid for pathfinding
-        wall_grid_add();
+        block_grid_add();
         
         //assign other stats
         tower_stats_update();
