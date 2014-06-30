@@ -16,8 +16,7 @@ if (object_index != obj_tower)
 
         //set horizontal seam
         image_index = 4*((y div tile_size) mod 2) + found_left + 2*found_right;
-        show_debug_message(string(y) + " | " + string(y div tile_size) + " | " + string((y div tile_size) mod 2));
-        
+
         //set top (diagonal) seam
         if (found_top)
         {

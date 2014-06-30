@@ -37,6 +37,7 @@ instance_create(0, 0, obj_pathfinding_controller);
 instance_create(0, 0, obj_spawning_controller);
 instance_create(0, 0, obj_money_controller);
 instance_create(0, 0, obj_selection_controller);
+instance_create(0, 0, obj_input_controller);
 </string>
           </argument>
         </arguments>
@@ -90,7 +91,7 @@ else
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (!obj_view_controller.mouse_drag and view_mouse_inside(view_game))
+            <string>/*if (!obj_view_controller.mouse_drag and view_mouse_inside(view_game))
 {
     with(obj_block)
     {
@@ -122,7 +123,7 @@ else
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (!obj_view_controller.mouse_drag and view_mouse_inside(view_game))
+            <string>/*if (!obj_view_controller.mouse_drag and view_mouse_inside(view_game))
 {
     var price = 30
     if (obj_money_controller.money &gt;= price)
