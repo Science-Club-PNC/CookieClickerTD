@@ -56,28 +56,6 @@ corpse_surf = -1;
           </argument>
         </arguments>
       </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///debug: init background selection
-background = 1;
-</string>
-          </argument>
-        </arguments>
-      </action>
     </event>
     <event eventtype="7" enumb="5">
       <action>
@@ -177,36 +155,6 @@ switch (view_current)
 //draw_set_colour(c_blue);
 //draw_rectangle(view_xview[view_current], view_yview[view_current], view_xview[view_current] + view_wview[view_current], view_yview[view_current] + view_hview[view_current], true);
 //draw_text(view_xview[view_current], view_yview[view_current], "view: " + string(view_current));
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="9" enumb="78">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///debug: switch background
-
-background++;
-
-if (background &gt; 6)
-{
-    background = 1;
-}
 </string>
           </argument>
         </arguments>
