@@ -23,7 +23,7 @@ if (block_grid_can_place(argument0, argument1, argument4))
         center_x = x + tower_size*tile_size/2
         center_y = y + tower_size*tile_size/2
         
-        //add the tower to the wall grid for pathfinding
+        //add the tower to the block grid for pathfinding
         block_grid_add();
         
         //assign other stats

@@ -4,7 +4,7 @@
 var abs_x = argument0*tile_size; 
 var abs_y = argument1*tile_size;
 
-//prevent player from placing multiple towers on the same place
+//prevent player from placing multiple blocks on the same place
 if (collision_rectangle( abs_x, abs_y, abs_x + argument2*tile_size - 1, abs_y + argument2*tile_size - 1, obj_block, false, false ) )
 {
     return false;
@@ -18,7 +18,7 @@ if((abs_x > first_x && abs_x < second_x) && (abs_y > first_y && abs_y < second_y
 {
     return false
 }
-//temporary add wall to wall grid to test
+//temporary add block to block grid to test
 block_grid_add_area(abs_x, abs_y, abs_x + argument2*tile_size - 1, abs_y + argument2*tile_size - 1);
 
 //loop through all spawners to check if they can go to the spawner
@@ -32,14 +32,14 @@ with(obj_spawner)
     
     if (!sucseed)
     {
-        //remove temporary wall
+        //remove temporary block
         block_grid_remove_area(abs_x, abs_y, abs_x + argument2*tile_size - 1, abs_y + argument2*tile_size - 1);
         
         return false;
     }
 }
 
-//remove temporary wall
+//remove temporary block
 block_grid_remove_area(abs_x, abs_y, abs_x + argument2*tile_size - 1, abs_y + argument2*tile_size - 1);
 
 return true;

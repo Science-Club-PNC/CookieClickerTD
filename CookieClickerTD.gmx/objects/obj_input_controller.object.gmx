@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>if (!obj_view_controller.mouse_drag and view_mouse_inside(view_game))
 {
-    with(obj_wall)
+    with(obj_block)
     {
         if position_meeting(view_mouse_x(), view_mouse_y(), self)
         {

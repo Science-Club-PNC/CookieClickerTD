@@ -78,8 +78,8 @@
       </scripts>
     </scripts>
     <scripts name="tower">
-      <script>scripts\tower_stats_update.gml</script>
       <script>scripts\tower_create.gml</script>
+      <script>scripts\tower_stats_update.gml</script>
       <script>scripts\tower_get_target.gml</script>
       <script>scripts\tower_shoot.gml</script>
     </scripts>
