@@ -2,28 +2,7 @@
 //draws the game in the current view
 
 //shader_set(sh_main);
-var background = obj_draw_controller.background;
-switch (background)
-{
-    case 1:
-    draw_background_tiled_ext(back_ground1, 0, 0, 0.5, 0.5, -1, 1);
-    break;
-    case 2:
-    draw_background_tiled_ext(back_ground2, 0, 0, 0.5, 0.5, -1, 1);
-    break;
-    case 3:
-    draw_background_tiled_ext(back_ground3, 0, 0, 0.5, 0.5, -1, 1);
-    break;
-    case 4:
-    draw_background_tiled_ext(back_ground4, 0, 0, 0.5, 0.5, -1, 1);
-    break;
-    case 5:
-    draw_background_tiled_ext(back_ground5, 0, 0, 1, 1, -1, 1);
-    break;
-    case 6:
-    draw_background_tiled_ext(back_ground6, 0, 0, 0.5, 0.5, -1, 1);
-    break;
-}
+draw_background_tiled_ext(back_ground, 0, 0, 0.5, 0.5, -1, 1);
 
 if surface_exists(obj_draw_controller.corpse_surf)
 {

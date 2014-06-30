@@ -26,19 +26,18 @@
           <argument>
             <kind>1</kind>
             <string>///init position variables
-stats_width = 200;
+stats_width = 0;
 stats_max_width = 200;
 
-stats_anim_state = 1;
+stats_anim_state = 0;
 stats_anim_speed = 0.04;
 
 buy_height = 0;
 buy_max_height = 100;
 
-buy_open = true;
+buy_open = false;
 buy_anim_state = 0;
 buy_anim_speed = 0.05;
-
 </string>
           </argument>
         </arguments>
