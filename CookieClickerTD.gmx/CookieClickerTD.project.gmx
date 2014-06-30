@@ -44,15 +44,17 @@
   <NewExtensions/>
   <sounds name="sound"/>
   <sprites name="sprites">
-    <sprite>sprites\spr_tower_base</sprite>
+    <sprite>sprites\spr_map_tower_base</sprite>
     <sprite>sprites\spr_king_cookie</sprite>
-    <sprite>sprites\spr_wall</sprite>
+    <sprite>sprites\spr_map_wall</sprite>
     <sprite>sprites\spr_enemy</sprite>
     <sprite>sprites\spr_bullet</sprite>
     <sprite>sprites\spr_tower_turret</sprite>
     <sprite>sprites\spr_cursor_pointer</sprite>
     <sprite>sprites\spr_cursor_finger</sprite>
     <sprite>sprites\spr_plusone</sprite>
+    <sprite>sprites\spr_wall</sprite>
+    <sprite>sprites\spr_wall_seam</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\back_grid</background>
