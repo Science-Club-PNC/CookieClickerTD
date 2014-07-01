@@ -2,11 +2,15 @@
 //draws the game in the current view
 
 //shader_set(sh_main);
-draw_background_tiled_ext(back_ground, 0, 0, 0.5, 0.5, -1, 1);
+draw_background_tiled_ext(back_ground, 0, 0, 0.25, 0.25, -1, 1);
 
 if surface_exists(obj_draw_controller.corpse_surf)
 {
     draw_surface(obj_draw_controller.corpse_surf, 0, 0);
+}
+if (obj_stats_controller.buy_open)
+{
+    draw_background_tiled_ext(back_grid, 0, 0, tile_size/background_get_width(back_grid),tile_size/background_get_height(back_grid), -1, 1);
 }
 
 with (obj_king_cookie)
@@ -47,10 +51,6 @@ with (obj_enemy)
     {
         draw_self();
     }
-}
-if (obj_stats_controller.buy_open)
-{
-    draw_background_tiled_ext(back_grid, 0, 0, tile_size/background_get_width(back_grid),tile_size/background_get_height(back_grid), -1, 1);
 }
 with (obj_plusone)
 {
