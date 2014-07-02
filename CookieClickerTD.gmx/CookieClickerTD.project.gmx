@@ -159,6 +159,7 @@
   </objects>
   <rooms name="rooms">
     <room>rooms\room_test</room>
+    <room>rooms\room_stress_test</room>
   </rooms>
   <constants number="5">
     <constant name="tile_size">32</constant>
