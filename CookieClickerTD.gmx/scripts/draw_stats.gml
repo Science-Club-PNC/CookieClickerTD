@@ -26,27 +26,31 @@ with(obj_stats_controller)
         draw_background(back_menu_hborder, background_get_width(back_menu_vborder), buy_bottom - background_get_height(back_menu_hborder));
         
         //draw titel
-        draw_set_font(font_debug);
+        draw_set_font(font_header);
         draw_set_colour(c_white);
         draw_text(buy_left + 18, buy_top + 2, "Shop");
         
         //draw buy buttons
-        for (xpos = 0; xpos < 3; xpos++)
+        for (var i = 0; i < buy_buttons_amount; i++)
         {
-            for (ypos = 0; ypos < 2; ypos++)
+            with (buy_buttons[i])
             {
-                with (buy_buttons[xpos,ypos])
+                if (mouse_hover)
                 {
-                    if menu_object_mouse_hover(id)
+                    if (pressed)
                     {
                         draw_set_colour(c_black);
                     }
                     else
                     {
-                        draw_set_colour(c_white);
-                    }
-                    draw_rectangle(x, y, x + width, y + height, false);
+                        draw_set_colour(c_dkgray);
+                    }      
                 }
+                else
+                {
+                    draw_set_colour(c_white);
+                }
+                draw_rectangle(x, y, x + width, y + height, false);
             }
         }
     }
@@ -61,7 +65,7 @@ with(obj_stats_controller)
         }
 
         //draw titel
-        draw_set_font(font_debug);
+        draw_set_font(font_header);
         draw_set_colour(c_white);
         draw_text(stats_left + 18, stats_top + 2, "Info");
     }

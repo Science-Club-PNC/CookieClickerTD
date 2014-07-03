@@ -44,6 +44,62 @@
 //if the button is currently being clicked
 pressed = false;
 
+//if the left mouse button is released on the button
+clicked = false;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>604</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_inherited</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>clicked = false;
+
+if (mouse_hover)
+{
+    if (mouse_check_button_pressed(mb_left))
+    {
+        pressed = true;
+    }
+    if (pressed and mouse_check_button_released(mb_left))
+    {
+        pressed = false;
+        clicked = true;
+    }
+}
+else
+{
+    pressed = false;
+}
 </string>
           </argument>
         </arguments>

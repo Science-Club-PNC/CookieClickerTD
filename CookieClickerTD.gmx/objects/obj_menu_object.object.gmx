@@ -35,6 +35,12 @@ parent_view = -1;
 width = 0;
 height = 0;
 
+//is enabled
+enabled = true;
+
+//is mouse currently hovering over menu object
+mouse_hover = false;
+
 //surface to one may use to draw object with
 surf = -1;
 </string>
@@ -63,6 +69,36 @@ surf = -1;
 if surface_exists(surf)
 {
     surface_free(surf);
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (enabled)
+{
+    mouse_hover = menu_object_mouse_hover(id);
+}
+else
+{
+    mouse_hover = false;
 }
 </string>
           </argument>
