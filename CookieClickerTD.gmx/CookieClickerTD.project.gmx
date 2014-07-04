@@ -133,6 +133,8 @@
   <fonts name="fonts">
     <font>fonts\font_debug</font>
     <font>fonts\font_header</font>
+    <font>fonts\font_default</font>
+    <font>fonts\font_tooltip</font>
   </fonts>
   <objects name="objects">
     <objects name="controllers">

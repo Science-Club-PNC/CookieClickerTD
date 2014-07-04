@@ -2,7 +2,7 @@
 <object>
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
-  <visible>0</visible>
+  <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
@@ -40,6 +40,9 @@ enabled = true;
 
 //is mouse currently hovering over menu object
 mouse_hover = false;
+
+//tooltip text
+tooltip = "";
 
 //surface to one may use to draw object with
 surf = -1;
@@ -92,9 +95,9 @@ if surface_exists(surf)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (enabled)
+            <string>if (enabled and menu_object_mouse_hover(id))
 {
-    mouse_hover = menu_object_mouse_hover(id);
+    mouse_hover++;
 }
 else
 {
@@ -119,6 +122,53 @@ else
         <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
+      </action>
+    </event>
+    <event eventtype="8" enumb="64">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>var tooltip_delay = 40;
+
+if ((tooltip != "") and (mouse_hover &gt;= tooltip_delay))
+{
+    draw_set_font(font_tooltip);
+    var tooltip_max_width = 300;
+    var tooltip_sep = -1;
+
+    if (mouse_hover == tooltip_delay)
+    {
+        tooltip_width = string_width_ext(tooltip, tooltip_sep, tooltip_max_width) + 4;
+        tooltip_height = string_height_ext(tooltip, tooltip_sep, tooltip_max_width);
+        
+        tooltip_x = min(window_mouse_get_x(), window_get_width() - tooltip_width);
+        tooltip_y = min(window_mouse_get_y() + 12, window_get_height() - tooltip_height);
+    }
+    
+    draw_set_colour(c_white);
+    draw_rectangle(tooltip_x, tooltip_y, tooltip_x + tooltip_width, tooltip_y + tooltip_height, false);
+    draw_set_colour(c_ltgray);
+    draw_rectangle(tooltip_x, tooltip_y, tooltip_x + tooltip_width, tooltip_y + tooltip_height, true);
+    
+    draw_set_colour(c_black);
+    draw_text_ext(tooltip_x + 2, tooltip_y, tooltip, tooltip_sep, tooltip_max_width);
+}
+</string>
+          </argument>
+        </arguments>
       </action>
     </event>
   </events>
