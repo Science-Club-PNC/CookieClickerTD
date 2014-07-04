@@ -147,6 +147,9 @@
       </scripts>
     </scripts>
   </scripts>
+  <shaders name="shaders">
+    <shader type="GLSLES">shaders\sh_corpse_fade.shader</shader>
+  </shaders>
   <fonts name="fonts">
     <font>fonts\font_debug</font>
     <font>fonts\font_header</font>

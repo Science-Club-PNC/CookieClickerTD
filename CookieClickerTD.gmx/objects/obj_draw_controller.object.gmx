@@ -52,6 +52,7 @@ for (i=0; i&lt;=7; i++;)
             <kind>1</kind>
             <string>///init corpse surface
 corpse_surf = -1;
+corpse_fade_timer = 0;
 </string>
           </argument>
         </arguments>
@@ -108,6 +109,24 @@ if !surface_exists(corpse_surf)
     surface_set_target(corpse_surf);
     draw_clear_alpha(c_black, 0);
     surface_reset_target();
+}
+else
+{
+    corpse_fade_timer++;
+    if (corpse_fade_timer == 100)
+    {
+        corpse_fade_timer = 0;
+
+        surface_set_target(corpse_surf);
+        shader_set(sh_corpse_fade);
+        draw_set_blend_mode_ext(bm_one,bm_zero);
+
+        draw_surface(corpse_surf, 0, 0);
+
+        surface_reset_target();
+        shader_reset();
+        draw_set_blend_mode(bm_normal);
+    }
 }
 </string>
           </argument>
