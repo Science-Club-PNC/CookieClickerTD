@@ -8,6 +8,84 @@
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
+    <event eventtype="6" enumb="61">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (view_mouse_inside(view_game))
+{
+    input_view_wheel_down();
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="6" enumb="60">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (view_mouse_inside(view_game))
+{
+    input_view_wheel_up();
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="6" enumb="58">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (obj_view_controller.mouse_drag)
+{
+    input_view_middle_released();
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="6" enumb="57">
       <action>
         <libid>1</libid>
@@ -57,9 +135,13 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (!obj_view_controller.mouse_drag and view_mouse_inside(view_game))
+            <string>if (view_mouse_inside(view_game))
 {
-    if (obj_king_cookie.clicked)
+    if (obj_view_controller.mouse_drag)
+    {
+        input_view_left_released();
+    }
+    else if (obj_king_cookie.clicked)
     {
         with (obj_king_cookie)
         {
@@ -92,6 +174,32 @@
         </arguments>
       </action>
     </event>
+    <event eventtype="6" enumb="55">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (view_mouse_inside(view_game) and (!obj_view_controller.mouse_drag))
+{
+    input_view_left_pressed();
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="6" enumb="53">
       <action>
         <libid>1</libid>
@@ -109,9 +217,13 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (!obj_view_controller.mouse_drag and view_mouse_inside(view_game))
+            <string>if (view_mouse_inside(view_game) and (!obj_view_controller.mouse_drag))
 {
-    if (position_meeting(view_mouse_x(), view_mouse_y(), obj_king_cookie))
+    if keyboard_check(vk_control)
+    {
+        input_view_left_pressed();
+    }
+    else if (position_meeting(view_mouse_x(), view_mouse_y(), obj_king_cookie))
     {
         with (obj_king_cookie)
         {
@@ -170,7 +282,7 @@ with (obj_selection_controller)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///restart room/game for debug
+            <string>///debug: restart room/game
 if (keyboard_check_direct(vk_control))
 {
     game_restart();

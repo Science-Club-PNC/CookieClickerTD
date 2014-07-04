@@ -132,6 +132,20 @@
     <scripts name="menu">
       <script>scripts\menu_object_mouse_hover.gml</script>
     </scripts>
+    <scripts name="input">
+      <scripts name="view">
+        <script>scripts\input_view_left_pressed.gml</script>
+        <script>scripts\input_view_middle_pressed.gml</script>
+        <script>scripts\input_view_left_released.gml</script>
+        <script>scripts\input_view_middle_released.gml</script>
+        <script>scripts\input_view_wheel_up.gml</script>
+        <script>scripts\input_view_wheel_down.gml</script>
+      </scripts>
+      <scripts name="build">
+        <script>scripts\input_build_left_pressed.gml</script>
+        <script>scripts\input_build_left_released.gml</script>
+      </scripts>
+    </scripts>
   </scripts>
   <fonts name="fonts">
     <font>fonts\font_debug</font>
