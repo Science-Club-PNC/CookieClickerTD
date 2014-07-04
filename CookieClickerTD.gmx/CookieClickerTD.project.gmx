@@ -114,7 +114,7 @@
     <scripts name="screen">
       <script>scripts\screen_resize.gml</script>
       <script>scripts\screen_set_stats_width.gml</script>
-      <script>scripts\screen_set_buy_height.gml</script>
+      <script>scripts\screen_set_build_height.gml</script>
     </scripts>
     <scripts name="draw">
       <script>scripts\draw_game.gml</script>

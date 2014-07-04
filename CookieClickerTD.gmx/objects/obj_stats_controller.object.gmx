@@ -32,12 +32,12 @@ stats_max_width = 200;
 stats_anim_state = 0;
 stats_anim_speed = 0.04;
 
-buy_height = 0;
-buy_max_height = 100;
+build_height = 0;
+build_max_height = 100;
 
-buy_open = false;
-buy_anim_state = 0;
-buy_anim_speed = 0.05;
+build_open = false;
+build_anim_state = 0;
+build_anim_speed = 0.05;
 </string>
           </argument>
         </arguments>
@@ -80,39 +80,39 @@ background_surf = -1;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///init buy buttons
-buy_buttons = 0;
-buy_buttons_x = 0;
-buy_buttons_y = 0;
-buy_buttons_amount = 7;
+            <string>///init build buttons
+build_buttons = 0;
+build_buttons_x = 0;
+build_buttons_y = 0;
+build_buttons_amount = 7;
 
 var b_size = 25;
 var b_space = 5 + b_size;
 
 var b_x = stats_max_width - 4*b_space;
-var b_y = buy_max_height - 16 - 2*b_space;
+var b_y = build_max_height - 16 - 2*b_space;
 
 
-for (var i = 0; i &lt; buy_buttons_amount; i++)
+for (var i = 0; i &lt; build_buttons_amount; i++)
 {
     if (i &lt; 6)
     {
-        buy_buttons_x[i] = b_x + (i mod 3)*b_space;
-        buy_buttons_y[i] = b_y + (i div 3)*b_space;
+        build_buttons_x[i] = b_x + (i mod 3)*b_space;
+        build_buttons_y[i] = b_y + (i div 3)*b_space;
     }
     else
     {
-        buy_buttons_x[i] = b_x + (3)*b_space;
-        buy_buttons_y[i] = b_y + b_space/2;
+        build_buttons_x[i] = b_x + (3)*b_space;
+        build_buttons_y[i] = b_y + b_space/2;
     }
-    with (instance_create(buy_buttons_x[i], buy_buttons_y[i], obj_button))
+    with (instance_create(build_buttons_x[i], build_buttons_y[i], obj_button))
     {    
         parent_view = view_stats;
         
         width = b_size;
         height = b_size;
         
-        other.buy_buttons[i] = id;
+        other.build_buttons[i] = id;
     }
 }
 </string>
@@ -156,22 +156,22 @@ else
     }
 }
 
-if (buy_open)
+if (build_open)
 {
-    if (buy_anim_state &lt; 1)
+    if (build_anim_state &lt; 1)
     {
-        buy_anim_state = min(buy_anim_state + buy_anim_speed, 1);
+        build_anim_state = min(build_anim_state + build_anim_speed, 1);
 
-        screen_set_buy_height(buy_max_height*buy_anim_state);
+        screen_set_build_height(build_max_height*build_anim_state);
     }
 }
 else
 {
-    if (buy_anim_state &gt; 0)
+    if (build_anim_state &gt; 0)
     {
-        buy_anim_state = max(buy_anim_state - buy_anim_speed, 0);
+        build_anim_state = max(build_anim_state - build_anim_speed, 0);
 
-        screen_set_buy_height(buy_max_height*buy_anim_state);
+        screen_set_build_height(build_max_height*build_anim_state);
     }
 }
 

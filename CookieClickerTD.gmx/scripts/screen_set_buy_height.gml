@@ -1,23 +1,23 @@
-///screen_set_buy_height(height)
-//sets buy height and moves UI accordingly
+///screen_set_build_height(height)
+//sets build height and moves UI accordingly
 
 var height = argument0;
 
 with (obj_stats_controller)
 {
-    buy_height = height;    
+    build_height = height;    
 
-    var buy_left = 0;
-    var buy_top = buy_height - buy_max_height;
-    var buy_right = buy_left + view_wview[view_stats] - 1;
-    var buy_bottom = buy_height;
+    var build_left = 0;
+    var build_top = build_height - build_max_height;
+    var build_right = build_left + view_wview[view_stats] - 1;
+    var build_bottom = build_height;
 
-    for (var i = 0; i < buy_buttons_amount; i++)
+    for (var i = 0; i < build_buttons_amount; i++)
     {
-        with (buy_buttons[i])
+        with (build_buttons[i])
         {
-            x = buy_left + other.buy_buttons_x[i];
-            y = buy_top + other.buy_buttons_y[i];
+            x = build_left + other.build_buttons_x[i];
+            y = build_top + other.build_buttons_y[i];
         }
     }
 }

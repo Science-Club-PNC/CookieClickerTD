@@ -8,7 +8,7 @@ if surface_exists(obj_draw_controller.corpse_surf)
 {
     draw_surface(obj_draw_controller.corpse_surf, 0, 0);
 }
-if (obj_stats_controller.buy_open)
+if (obj_stats_controller.build_open)
 {
     draw_background_tiled_ext(back_grid, 0, 0, tile_size/background_get_width(back_grid),tile_size/background_get_height(back_grid), -1, 1);
 }

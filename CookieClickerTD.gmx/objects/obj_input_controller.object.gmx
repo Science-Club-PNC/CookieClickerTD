@@ -201,10 +201,10 @@ else
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///open/close buy screen
+            <string>///open/close build screen
 with (obj_stats_controller)
 {
-    buy_open = !buy_open;
+    build_open = !build_open;
 }
 </string>
           </argument>
