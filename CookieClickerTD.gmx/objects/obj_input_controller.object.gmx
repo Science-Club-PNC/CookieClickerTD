@@ -156,17 +156,9 @@
             }
         }
     }
-    else
+    else if (obj_build_controller.enabled)
     {
-        // Create tower
-        var price = 30;
-        if (obj_money_controller.money &gt;= price)
-        {
-            if (tower_create(floor(view_mouse_x()/tile_size), floor(view_mouse_y()/tile_size), 1, 0, 1) != noone)
-            {
-                obj_money_controller.money -= price;
-            }
-        }
+        input_build_left_released();
     }
 }
 </string>
@@ -231,6 +223,10 @@
             image_xscale = 0.9;
             image_yscale = 0.9;
         }
+    }
+    else if (obj_build_controller.enabled)
+    {
+        input_build_left_pressed();
     }
 }
 </string>

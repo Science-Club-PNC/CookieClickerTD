@@ -169,6 +169,7 @@
       <object>objects\obj_spawning_controller</object>
       <object>objects\obj_money_controller</object>
       <object>objects\obj_selection_controller</object>
+      <object>objects\obj_build_controller</object>
       <object>objects\obj_input_controller</object>
     </objects>
     <objects name="game">

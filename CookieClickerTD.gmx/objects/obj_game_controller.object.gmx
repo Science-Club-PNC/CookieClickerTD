@@ -37,6 +37,7 @@ instance_create(0, 0, obj_pathfinding_controller);
 instance_create(0, 0, obj_spawning_controller);
 instance_create(0, 0, obj_money_controller);
 instance_create(0, 0, obj_selection_controller);
+instance_create(0, 0, obj_build_controller);
 instance_create(0, 0, obj_input_controller);
 </string>
           </argument>

@@ -28,14 +28,14 @@ with(obj_stats_controller)
         //draw titel
         draw_set_font(font_header);
         draw_set_colour(c_white);
-        draw_text(build_left + 18, build_top + 2, "Shop");
+        draw_text(build_left + 18, build_top + 2, "Build");
         
         //draw build buttons
         for (var i = 0; i < build_buttons_amount; i++)
         {
             with (build_buttons[i])
             {
-                if (mouse_hover)
+                if (mouse_hover or selected)
                 {
                     if (pressed)
                     {

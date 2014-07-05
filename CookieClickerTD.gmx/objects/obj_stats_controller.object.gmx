@@ -35,7 +35,7 @@ stats_anim_speed = 0.04;
 build_height = 0;
 build_max_height = 100;
 
-build_open = false;
+build_open = false; 
 build_anim_state = 0;
 build_anim_speed = 0.05;
 </string>
@@ -112,6 +112,19 @@ for (var i = 0; i &lt; build_buttons_amount; i++)
         width = b_size;
         height = b_size;
         
+        selected = false;
+        
+        if (i &lt; 6)
+        {
+            build_type = (i div 3);
+            build_size = 1 + (i mod 3);
+        }
+        else
+        {
+            build_type = -1;
+            build_size = 1;      
+        }
+        
         other.build_buttons[i] = id;
     }
 }
@@ -137,7 +150,8 @@ for (var i = 0; i &lt; build_buttons_amount; i++)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (obj_selection_controller.selection_type == 0)
+            <string>///open/close menus
+if (obj_selection_controller.selection_type == 0)
 {
     if (stats_anim_state &gt; 0)
     {
@@ -176,6 +190,61 @@ else
 }
 
 
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///detect build button presses
+if (build_anim_state == 1)
+{
+    for (var i = 0; i &lt; build_buttons_amount; i++)
+    {
+        with (build_buttons[i])
+        {
+            if (clicked)
+            {
+                with(obj_build_controller)
+                {
+                    if ((build_type != other.build_type) or (build_size != other.build_size) or (!enabled))
+                    {
+                        enabled = true;
+                        
+                        for (var i = 0; i &lt; obj_stats_controller.build_buttons_amount; i++)
+                        {
+                            obj_stats_controller.build_buttons[i].selected = false;
+                        }
+                        other.selected = true;
+                        
+                        build_type = other.build_type;
+                        build_size = other.build_size;
+                    }
+                    else
+                    {
+                        enabled = false;
+                        
+                        other.selected = false;
+                    }
+                }
+            }
+        }
+    }
+}
 </string>
           </argument>
         </arguments>

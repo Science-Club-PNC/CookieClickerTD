@@ -1,4 +1,4 @@
-///block_grid_can_place(x, y, size)
+///block_can_place(x, y, size)
 //checks if the selected area is free and does not block the enemies from going to the king cookie.
 
 var abs_x = argument0*tile_size; 

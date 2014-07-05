@@ -1,5 +1,4 @@
 // Varyings
-static float4 _v_vColour = {0, 0, 0, 0};
 static float2 _v_vTexcoord = {0, 0};
 
 static float4 gl_Color[1] =
@@ -62,18 +61,18 @@ if(_gm_PS_FogEnabled)
 }
 ;
 ;
-;
 void gl_main()
 {
 {
-(gl_Color[0] = (_v_vColour * gl_texture2D(_gm_BaseTexture, _v_vTexcoord)));
+float4 _col = gl_texture2D(_gm_BaseTexture, _v_vTexcoord);
+(_col.w -= 0.0099999998);
+(gl_Color[0] = _col);
 }
 }
 ;
 struct PS_INPUT
 {
-    float4 v0 : TEXCOORD0;
-    float2 v1 : TEXCOORD1;
+    float2 v0 : TEXCOORD0;
 };
 
 struct PS_OUTPUT
@@ -83,8 +82,7 @@ struct PS_OUTPUT
 
 PS_OUTPUT main(PS_INPUT input)
 {
-    _v_vColour = input.v0;
-    _v_vTexcoord = input.v1.xy;
+    _v_vTexcoord = input.v0.xy;
 
     gl_main();
 
