@@ -6,7 +6,7 @@ with (obj_build_controller)
     {
         if (build_type < 0)
         {
-            var price = 30;
+            var price = 10;
             if (obj_money_controller.money >= price)
             {
                 if (block_can_place(build_htile, build_vtile, build_size))

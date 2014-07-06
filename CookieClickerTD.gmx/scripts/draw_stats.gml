@@ -30,6 +30,11 @@ with(obj_stats_controller)
         draw_set_colour(c_white);
         draw_text(build_left + 18, build_top + 2, "Build");
         
+        //draw build button types
+        draw_background(back_melee_icon, build_buttons[0].x - 30, build_buttons[0].y);
+        draw_background(back_ranged_icon, build_buttons[3].x - 30, build_buttons[3].y);
+        draw_background(back_wall_icon, build_buttons[6].x, build_buttons[6].y - 30);
+        
         //draw build buttons
         for (var i = 0; i < build_buttons_amount; i++)
         {

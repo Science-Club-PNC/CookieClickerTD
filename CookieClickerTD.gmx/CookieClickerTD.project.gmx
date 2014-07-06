@@ -67,10 +67,17 @@
   <backgrounds name="background">
     <background>background\back_grid</background>
     <background>background\back_ground</background>
-    <background>background\back_menu_background</background>
-    <background>background\back_menu_hborder</background>
-    <background>background\back_menu_vborder</background>
-    <background>background\back_menu_noise</background>
+    <backgrounds name="menu">
+      <backgrounds name="build">
+        <background>background\back_melee_icon</background>
+        <background>background\back_ranged_icon</background>
+        <background>background\back_wall_icon</background>
+      </backgrounds>
+      <background>background\back_menu_noise</background>
+      <background>background\back_menu_background</background>
+      <background>background\back_menu_hborder</background>
+      <background>background\back_menu_vborder</background>
+    </backgrounds>
   </backgrounds>
   <paths name="paths">
     <path>paths\path_circle</path>
