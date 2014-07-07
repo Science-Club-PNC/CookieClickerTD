@@ -39,7 +39,20 @@ with(obj_stats_controller)
         for (var i = 0; i < build_buttons_amount; i++)
         {
             with (build_buttons[i])
-            {
+            {                
+                switch (build_size)
+                {
+                    case 1:
+                    draw_background(back_build_1x1, x, y);
+                    break;
+                    case 2:
+                    draw_background(back_build_2x2, x, y);
+                    break;
+                    case 3:
+                    draw_background(back_build_3x3, x, y);
+                    break;
+                }
+                
                 if (mouse_hover or selected)
                 {
                     if (pressed)
@@ -48,14 +61,12 @@ with(obj_stats_controller)
                     }
                     else
                     {
-                        draw_set_colour(c_dkgray);
-                    }      
+                        draw_set_colour(c_white);
+                    }
+                    draw_set_alpha(0.4);
+                    draw_rectangle(x, y, x + width - 1, y + height - 1, false);
+                    draw_set_alpha(1);
                 }
-                else
-                {
-                    draw_set_colour(c_white);
-                }
-                draw_rectangle(x, y, x + width, y + height, false);
             }
         }
     }

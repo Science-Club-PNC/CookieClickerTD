@@ -72,6 +72,9 @@
         <background>background\back_melee_icon</background>
         <background>background\back_ranged_icon</background>
         <background>background\back_wall_icon</background>
+        <background>background\back_build_1x1</background>
+        <background>background\back_build_2x2</background>
+        <background>background\back_build_3x3</background>
       </backgrounds>
       <background>background\back_menu_noise</background>
       <background>background\back_menu_background</background>
