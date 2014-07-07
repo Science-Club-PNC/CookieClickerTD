@@ -63,6 +63,28 @@ with (obj_plusone)
     }
 }
 
+//debug: draw marker for selection
+with (obj_selection_controller.selection)
+{
+    draw_set_colour(c_blue);
+    draw_set_alpha(0.6);
+    
+    switch (obj_selection_controller.selection_type)
+    {
+    case 1:
+        draw_rectangle(x, y, x + tower_size*tile_size, y + tower_size*tile_size, false);
+        break;
+    case 2:
+        draw_rectangle(x, y, x + tile_size, y + tile_size, false);
+        break;
+    case 4:
+        draw_circle(x, y, 15, false);
+        break;
+    }
+    
+    draw_set_alpha(1);
+}
+
 //debug: draw enemy stats
 if view_mouse_inside(view_game)
 {

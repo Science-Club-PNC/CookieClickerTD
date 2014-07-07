@@ -183,6 +183,15 @@ else
 {
     if (build_anim_state &gt; 0)
     {
+        if (build_anim_state == 1)
+        {
+            obj_build_controller.enabled = false    
+        
+            for (var i = 0; i &lt; build_buttons_amount; i++)
+            {
+                build_buttons[i].selected = false;
+            }
+        }
         build_anim_state = max(build_anim_state - build_anim_speed, 0);
 
         screen_set_build_height(build_max_height*build_anim_state);

@@ -137,7 +137,6 @@
     </scripts>
     <scripts name="utils">
       <script>scripts\string_split.gml</script>
-      <script>scripts\rectangle_check_point.gml</script>
     </scripts>
     <scripts name="menu">
       <script>scripts\menu_object_mouse_hover.gml</script>
@@ -154,6 +153,11 @@
       <scripts name="build">
         <script>scripts\input_build_left_pressed.gml</script>
         <script>scripts\input_build_left_released.gml</script>
+      </scripts>
+      <scripts name="selection">
+        <script>scripts\input_selection_left_pressed.gml</script>
+        <script>scripts\input_selection_left_released.gml</script>
+        <script>scripts\input_selection_get.gml</script>
       </scripts>
     </scripts>
   </scripts>

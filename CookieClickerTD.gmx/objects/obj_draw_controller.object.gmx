@@ -156,7 +156,8 @@ draw_set_colour(c_white);
 draw_text(0,20,"timer: " + string(obj_spawning_controller.timer) + 
     "#wave_num: " + string(obj_spawning_controller.wave_num) +
     "#towers: " + string(instance_number(obj_tower)) +
-    "#enemies: " + string(instance_number(obj_enemy)));
+    "#enemies: " + string(instance_number(obj_enemy)) +
+    "#selection type: " + string(obj_selection_controller.selection_type));
 </string>
           </argument>
         </arguments>
