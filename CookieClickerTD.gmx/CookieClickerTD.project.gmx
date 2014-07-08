@@ -131,7 +131,7 @@
     </scripts>
     <scripts name="draw">
       <script>scripts\draw_game.gml</script>
-      <script>scripts\draw_stats.gml</script>
+      <script>scripts\draw_banner.gml</script>
       <script>scripts\draw_header.gml</script>
       <script>scripts\draw_footer.gml</script>
     </scripts>
@@ -178,7 +178,7 @@
     <objects name="controllers">
       <object>objects\obj_game_controller</object>
       <object>objects\obj_settings_controller</object>
-      <object>objects\obj_stats_controller</object>
+      <object>objects\obj_banner_controller</object>
       <object>objects\obj_screen_controller</object>
       <object>objects\obj_draw_controller</object>
       <object>objects\obj_pause_controller</object>
@@ -212,7 +212,7 @@
   <constants number="6">
     <constant name="tile_size">32</constant>
     <constant name="view_game">0</constant>
-    <constant name="view_stats">1</constant>
+    <constant name="view_banner">1</constant>
     <constant name="view_header">2</constant>
     <constant name="view_footer">3</constant>
     <constant name="cleaning_king">false</constant>

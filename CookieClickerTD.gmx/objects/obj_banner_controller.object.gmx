@@ -107,7 +107,7 @@ for (var i = 0; i &lt; build_buttons_amount; i++)
     }
     with (instance_create(build_buttons_x[i], build_buttons_y[i], obj_button))
     {    
-        parent_view = view_stats;
+        parent_view = view_banner;
         
         width = b_size;
         height = b_size;
@@ -234,9 +234,9 @@ if (build_anim_state == 1)
                     {
                         enabled = true;
                         
-                        for (var i = 0; i &lt; obj_stats_controller.build_buttons_amount; i++)
+                        for (var i = 0; i &lt; obj_banner_controller.build_buttons_amount; i++)
                         {
-                            obj_stats_controller.build_buttons[i].selected = false;
+                            obj_banner_controller.build_buttons[i].selected = false;
                         }
                         other.selected = true;
                         
@@ -306,8 +306,8 @@ if surface_exists(background_surf)
             <string>///create background surface
 if !surface_exists(background_surf)
 {
-    var wview = view_wview[view_stats];
-    var hview = view_hview[view_stats];
+    var wview = view_wview[view_banner];
+    var hview = view_hview[view_banner];
     
     background_surf = surface_create(wview, hview);
     surface_set_target(background_surf);

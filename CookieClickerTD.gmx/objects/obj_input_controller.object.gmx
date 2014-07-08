@@ -275,7 +275,7 @@ else
           <argument>
             <kind>1</kind>
             <string>///open/close build screen
-with (obj_stats_controller)
+with (obj_banner_controller)
 {
     build_open = !build_open;
 }

@@ -187,8 +187,8 @@ switch (view_current)
     draw_game();
     break;
     
-    case view_stats:
-    draw_stats();
+    case view_banner:
+    draw_banner();
     break;
     
     case view_header:
