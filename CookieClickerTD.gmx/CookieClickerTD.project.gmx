@@ -159,6 +159,10 @@
         <script>scripts\input_selection_left_released.gml</script>
         <script>scripts\input_selection_get.gml</script>
       </scripts>
+      <scripts name="king_cookie">
+        <script>scripts\input_king_cookie_left_pressed.gml</script>
+        <script>scripts\input_king_cookie_left_released.gml</script>
+      </scripts>
     </scripts>
   </scripts>
   <shaders name="shaders">

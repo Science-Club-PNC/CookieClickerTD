@@ -141,20 +141,9 @@
     {
         input_view_left_released();
     }
-    else if (obj_king_cookie.clicked)
+    else if (obj_king_cookie.pressed)
     {
-        with (obj_king_cookie)
-        {
-            clicked = false;
-            image_xscale = 1;
-            image_yscale = 1;
-            
-            if (position_meeting(view_mouse_x(), view_mouse_y(), obj_king_cookie))
-            {
-                instance_create(view_mouse_x(), view_mouse_y(), obj_plusone);
-                obj_money_controller.money += 1;
-            }
-        }
+        input_king_cookie_left_released();
     }
     else if (obj_build_controller.enabled)
     {
@@ -221,12 +210,7 @@
     }
     else if (position_meeting(view_mouse_x(), view_mouse_y(), obj_king_cookie))
     {
-        with (obj_king_cookie)
-        {
-            clicked = true;
-            image_xscale = 0.9;
-            image_yscale = 0.9;
-        }
+        input_king_cookie_left_pressed();
     }
     else if (obj_build_controller.enabled)
     {
