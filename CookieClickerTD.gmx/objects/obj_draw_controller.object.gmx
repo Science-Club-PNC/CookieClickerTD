@@ -30,6 +30,7 @@ for (i=0; i&lt;=7; i++;)
 {
     background_visible[i] = false;
 }
+
 </string>
           </argument>
         </arguments>
