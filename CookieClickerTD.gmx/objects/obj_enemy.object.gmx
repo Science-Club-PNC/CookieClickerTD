@@ -71,6 +71,8 @@ is_flying = false;
 //is already in the circle
 in_circle = false;
 
+alarm[0] = 30
+
 
 </string>
           </argument>
@@ -113,6 +115,30 @@ image_yscale = scale;
 time = 100
 
 </string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>611</id>
+        <kind>6</kind>
+        <userelative>-1</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>d_t_k</string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>84</string>
           </argument>
         </arguments>
       </action>
@@ -162,6 +188,30 @@ obj_money_controller.money += 1;
         </arguments>
       </action>
     </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>d_t_k = 84
+alarm[0] = 30
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="2" enumb="0">
       <action>
         <libid>1</libid>
@@ -179,7 +229,34 @@ obj_money_controller.money += 1;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>path_rotate(path_index,image_angle)
+            <string>d_t_k = 76
+alarm[1] = 6
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="2">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (distance_to_object(obj_king_cookie) &lt;32)
+{
+    move_towards_point(obj_king_cookie.x,obj_king_cookie.y,0)
+}
 </string>
           </argument>
         </arguments>
@@ -257,10 +334,10 @@ instance_destroy()
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (distance_to_point(obj_king_cookie.x,obj_king_cookie.y)  &lt; 93 &amp;&amp; path_exists(path_index))
+            <string>if (distance_to_point(obj_king_cookie.x,obj_king_cookie.y)  &lt; 94 &amp;&amp; path_exists(path_index))
 {
     path_delete(path_index)
-    time = point_direction(self.x,self.y,obj_king_cookie.x,obj_king_cookie.y)
+    time = point_direction(self.x,self.y,obj_king_cookie.x,obj_king_cookie.y) -180
 }
 </string>
           </argument>
@@ -302,10 +379,9 @@ instance_destroy()
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>x = obj_king_cookie.x + 84*sin(time)
-y = obj_king_cookie.y + 84*cos(time)
+            <string>x = obj_king_cookie.x + d_t_k*sin(time)
+y = obj_king_cookie.y + d_t_k*cos(time)
 time += 0.02
-move_towards_point(obj_king_cookie.x,obj_king_cookie.y,0)
 </string>
           </argument>
         </arguments>
