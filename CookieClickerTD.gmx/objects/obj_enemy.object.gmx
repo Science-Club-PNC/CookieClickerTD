@@ -336,8 +336,8 @@ instance_destroy()
             <kind>1</kind>
             <string>if (distance_to_point(obj_king_cookie.x,obj_king_cookie.y)  &lt; 94 &amp;&amp; path_exists(path_index))
 {
-    path_delete(path_index)
-    time = point_direction(self.x,self.y,obj_king_cookie.x,obj_king_cookie.y) -180
+    path_delete(path_index);
+    time = point_direction(obj_king_cookie.x, obj_king_cookie.y, self.x, self.y);
 }
 </string>
           </argument>
@@ -379,9 +379,9 @@ instance_destroy()
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>x = obj_king_cookie.x + d_t_k*sin(time)
-y = obj_king_cookie.y + d_t_k*cos(time)
-time += 0.02
+            <string>x = obj_king_cookie.x + lengthdir_x(d_t_k, time)
+y = obj_king_cookie.y + lengthdir_y(d_t_k, time)
+time += 1
 </string>
           </argument>
         </arguments>
