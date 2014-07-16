@@ -82,9 +82,7 @@
       <background>background\back_menu_vborder</background>
     </backgrounds>
   </backgrounds>
-  <paths name="paths">
-    <path>paths\path_circle</path>
-  </paths>
+  <paths name="paths"/>
   <scripts name="scripts">
     <scripts name="enemy">
       <script>scripts\enemy_create.gml</script>

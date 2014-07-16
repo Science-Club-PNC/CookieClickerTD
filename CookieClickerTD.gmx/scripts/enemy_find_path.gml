@@ -33,10 +33,4 @@ if (distance_to_object(obj_king_cookie) > 32)
         }
     }
 }
-else
-{
-    in_circle = true
-    var new_path = path_circle
-    path_rotate(0,image_angle)
-    path_start(path_circle,movement_speed,0,false)
-}
+
