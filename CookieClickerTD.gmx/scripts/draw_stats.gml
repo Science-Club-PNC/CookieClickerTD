@@ -22,5 +22,26 @@ with(obj_banner_controller)
         draw_set_font(font_header);
         draw_set_colour(c_white);
         draw_text(stats_left + 18, stats_top + 2, "Info");
+        
+        //draw stats
+        var i;
+        for(i=1; i<=3; i+=1)
+        {
+            switch(i)
+            {
+                case 1:
+                show_message("Damage: ");
+                break;
+                
+                case 2:
+                show_message("Fire rate: ");
+                break;
+                
+                case 3:
+                show_message("Range: ");
+                break;
+                
+            } 
+        }
     }
 }

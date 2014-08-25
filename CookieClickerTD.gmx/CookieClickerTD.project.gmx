@@ -212,13 +212,15 @@
     <room>rooms\room_test</room>
     <room>rooms\room_stress_test</room>
   </rooms>
-  <constants number="6">
+  <constants number="8">
     <constant name="tile_size">32</constant>
     <constant name="view_game">0</constant>
     <constant name="view_banner">1</constant>
     <constant name="view_header">2</constant>
     <constant name="view_footer">3</constant>
     <constant name="cleaning_king">false</constant>
+    <constant name="GM_build_date">41876.6402430903</constant>
+    <constant name="GM_version">'1.0.0.0'</constant>
   </constants>
   <help>
     <rtf>help.rtf</rtf>
