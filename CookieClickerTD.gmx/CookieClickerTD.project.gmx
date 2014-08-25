@@ -132,6 +132,7 @@
       <scripts name="banner">
         <script>scripts\draw_banner.gml</script>
         <script>scripts\draw_build.gml</script>
+        <script>scripts\draw_stats_init.gml</script>
         <script>scripts\draw_stats.gml</script>
       </scripts>
       <script>scripts\draw_header.gml</script>
@@ -219,7 +220,7 @@
     <constant name="view_header">2</constant>
     <constant name="view_footer">3</constant>
     <constant name="cleaning_king">false</constant>
-    <constant name="GM_build_date">41876.6402430903</constant>
+    <constant name="GM_build_date">41876.6874776505</constant>
     <constant name="GM_version">'1.0.0.0'</constant>
   </constants>
   <help>
