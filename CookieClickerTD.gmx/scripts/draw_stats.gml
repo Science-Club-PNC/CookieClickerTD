@@ -18,13 +18,5 @@ with(obj_banner_controller)
         {
             draw_surface_part(background_surf, 0, stats_top, view_wview[view_banner], stats_bottom, stats_left, stats_top);
         }
-
-        //draw titel
-        draw_set_font(font_header);
-        draw_set_colour(c_white);
-        draw_text(stats_left + stats_middle, stats_top + 2, "Info");
-        
-        //draw stats
-        
     }
 }
