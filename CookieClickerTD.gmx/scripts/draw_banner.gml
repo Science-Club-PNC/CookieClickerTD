@@ -21,6 +21,7 @@ with obj_selection_controller
             draw_set_colour(c_white);
             draw_text(stats_left + stats_middle, stats_top + 2, "Tower");
             
+            //draw stats
             var i;
             for(i=1; i<=3; i+=1)
             {
