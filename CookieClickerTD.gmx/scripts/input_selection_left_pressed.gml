@@ -6,7 +6,5 @@ with (obj_selection_controller)
     
     selection = found_selection[0];
     selection_type = found_selection[1];
-    
-    draw_stats_init();
 
 }

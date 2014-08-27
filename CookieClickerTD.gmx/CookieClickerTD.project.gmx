@@ -132,7 +132,6 @@
       <scripts name="banner">
         <script>scripts\draw_banner.gml</script>
         <script>scripts\draw_build.gml</script>
-        <script>scripts\draw_stats_init.gml</script>
         <script>scripts\draw_stats.gml</script>
       </scripts>
       <script>scripts\draw_header.gml</script>
