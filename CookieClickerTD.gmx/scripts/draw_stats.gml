@@ -8,6 +8,7 @@ with(obj_banner_controller)
     var stats_top = build_height;
     var stats_right = stats_left + view_wview[view_banner] - 1;
     var stats_bottom = view_hview[view_banner] - 1;
+    var stats_middle = stats_max_width/2;
     
     //draw stats menu
     if (stats_anim_state > 0)
@@ -21,7 +22,7 @@ with(obj_banner_controller)
         //draw titel
         draw_set_font(font_header);
         draw_set_colour(c_white);
-        draw_text(stats_left + 18, stats_top + 2, "Info");
+        draw_text(stats_left + stats_middle, stats_top + 2, "Info");
         
         //draw stats
         

@@ -12,6 +12,7 @@ with obj_selection_controller
     {
         var stats_left = obj_banner_controller.stats_max_width - obj_banner_controller.stats_width;
         var stats_top = obj_banner_controller.build_height;
+        var stats_middle = obj_banner_controller.stats_max_width/2;
 
         if selection_type == 1
         {
@@ -21,14 +22,17 @@ with obj_selection_controller
                 switch(i)
                 {
                     case 1:
+                    draw_set_font(font_default);
                     draw_text(stats_left + 18, stats_top + 22, "Damage: " + string(selection.hit_damage));
                     break;
                 
                     case 2:
+                    draw_set_font(font_default);
                     draw_text(stats_left + 18, stats_top + 42, "Firerate: " + string(selection.hit_speed));
                     break;
                 
                     case 3:
+                    draw_set_font(font_default);
                     draw_text(stats_left + 18, stats_top + 62, "Range: " + string(selection.hit_range));
                     break;
                 
